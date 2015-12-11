@@ -1,60 +1,138 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-            <body>
-                <h1>Gus Silva</h1>
-                <p>I am a student from UC Berkeley.</p>
-            </body>
-            <!-- Accent-colored raised button with ripple -->
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  Button
-</button>
-            <!-- Colored FAB button -->
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-                <i class="material-icons">add</i>
-            </button>
-            <!-- Square card -->
-            <style>
-.demo-card-square.mdl-card {
-  width: 320px;
-  height: 320px;
-}
-.demo-card-square > .mdl-card__title {
-  color: #fff;
-  background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
-}
-</style>
-            <div>
-                <div class="demo-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">Update</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js                               -button mdl-js-ripple-effect">
-                            View Updates
-                            </a>
-                    </div>
-                </div>
-                <div class="demo-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">Update</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js                               -button mdl-js-ripple-effect">
-                            View Updates
-                            </a>
-                    </div>
-                </div>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Uses a header that contracts as the page scrolls down. -->
+    <style>
+    .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+      padding-right: 0;
+    }
+    </style>
+
+    <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--waterfall">
+        <!-- Top row, always visible -->
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Title</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                      mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon"
+                   for="waterfall-exp">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" name="sample"
+                     id="waterfall-exp">
             </div>
-        </html>
+          </div>
+        </div>
+        <!-- Bottom row, not visible on scroll -->
+        <div class="mdl-layout__header-row">
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+
+      <body>
+        <h1>Gus Silva</h1>
+        <p>I am a student from UC Berkeley.</p>
+      </body>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+          <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">BH Music</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+              A simple, easy to use, material designed music player.
+              Developed independently and open source.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js                               -button mdl-js-ripple-effect">
+                      View Project
+                      </a>
+              </div>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Picture Perfect</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+              A camera application developed at CalHacks 2015.
+              Automatically takes a photo once everyone in the frame
+              is smiling.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js                               -button mdl-js-ripple-effect">
+                      View Project
+                      </a>
+              </div>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <div class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">DealOn!</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aenan convallis.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js                               -button mdl-js-ripple-effect">
+                      View Project
+                      </a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accent-colored raised button with ripple -->
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Button
+      </button>
+      <!-- Colored FAB button -->
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+        <i class="material-icons">add</i>
+      </button>
+
+      <!-- Square card -->
+      <style>
+      .demo-card-square.mdl-card {
+        width: 320px;
+        height: 320px;
+      }
+      .demo-card-square > .mdl-card__title {
+        color: #fff;
+        background:
+          url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+      }
+      </style>
+        </div>
+      </main>
+    </div>
+</html>
