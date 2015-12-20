@@ -18,9 +18,15 @@
       .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
         padding-right: 0;
       }
-      </style>
-
-      <style>
+      .demo-card-square.mdl-card {
+        width: 320px;
+        height: 320px;
+      }
+      .demo-card-square > .mdl-card__title {
+        color: #fff;
+        background:
+          url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+      }
       #email-fab {
         position: fixed;
         display: block;
@@ -34,7 +40,7 @@
     </head>
 
 
-
+<body>
     <!-- FAB -->
     <a href="http://gusrsilva.github.io/"
       target="_blank" id="email-fab"
@@ -43,8 +49,6 @@
             mdl-color--accent mdl-color-text--accent-contrast">
               <i class="material-icons">email</i>
     </a>
-
-    <body>
     <!-- Always shows a header, even in smaller screens. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
@@ -71,8 +75,8 @@
           <a class="mdl-navigation__link" href="">Link</a>
         </nav>
       </div>
-      <main class="mdl-layout__content">
-        <div class="page-content">
+  <main class="mdl-layout__content">
+    <div class="page-content">
           <!-- Your content goes here -->
 
       <div style="padding-left: 15px; padding-top: 20px">
@@ -80,7 +84,9 @@
     </div>
 
       <div class="mdl-grid">
-          <div class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+
+        <!-- BH Music Card -->
+        <div class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
               <div class="mdl-card__title mdl-card--expand">
                   <h2 class="mdl-card__title-text">BH Music</h2>
               </div>
@@ -94,6 +100,8 @@
                       </a>
               </div>
           </div>
+
+        <!-- PicturePerfect Card -->
         <div class="mdl-cell mdl-cell--4-col">
           <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
@@ -111,6 +119,8 @@
               </div>
           </div>
         </div>
+
+        <!-- DealOn Card -->
         <div class="mdl-cell mdl-cell--4-col">
           <div class="demo-card-square mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
@@ -128,21 +138,8 @@
           </div>
         </div>
       </div>
-    </body>
-
-      <!-- Square card -->
-      <style>
-      .demo-card-square.mdl-card {
-        width: 320px;
-        height: 320px;
-      }
-      .demo-card-square > .mdl-card__title {
-        color: #fff;
-        background:
-          url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
-      }
-      </style>
-        </div>
-      </main>
+      </div>
     </div>
+  </main>
+</body>
 </html>
