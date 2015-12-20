@@ -18,19 +18,45 @@
       .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
         padding-right: 0;
       }
-      .demo-card-square.mdl-card {
-        width: 320px;
-        height: 320px;
+      .android-card-container .mdl-card__media {
+        overflow: hidden;
+        background: transparent;
       }
-      .demo-card-square > .mdl-card__title {
-        color: #fff;
-        background:
-          url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+
+      .android-card-container .mdl-card__media img {
+        width: 100%;
       }
+
+       .android-card-container .mdl-card__title {
+         background: transparent;
+         height: auto;
+       }
+
+       .android-card-container .mdl-card__title-text {
+         color: black;
+         height: auto;
+       }
+
+       .android-card-container .mdl-card__supporting-text {
+         height: auto;
+         color: black;
+         padding-bottom: 48px;
+       }
+
+       .android-card-container .mdl-card__actions {
+         position: absolute;
+         bottom: 0;
+       }
+
+       .android-card-container .mdl-card__actions a {
+         border-top: none;
+         line-height: 32px;
+         font-size: 16px;
+       }
       h3 {
         color: grey;
         font-family: Roboto;
-        padding-left: 10px;
+        padding-left: 20px;
       }
       #email-fab {
         position: fixed;
@@ -82,7 +108,11 @@
             <div class="page-content">
             <!-- Your content goes here -->
 
-                <h3>Android Projects</h3>
+
+                <h3>
+                  Android Projects
+                  <i class="material-icons">android</i>
+                </h3>
 
                 <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
