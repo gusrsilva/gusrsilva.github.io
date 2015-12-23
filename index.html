@@ -10,15 +10,12 @@
       <!-- Page styles -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+      <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue-pink.min.css" />
       <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 
       <!-- Uses a header that contracts as the page scrolls down. -->
       <style>
-      .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
-        padding-right: 0;
-      }
-      .android-navigation .mdl-navigation__link {
+      .mdl-navigation__link {
         display: inline-block;
         height: 60px;
         line-height: 68px;
@@ -26,8 +23,8 @@
         border-bottom: 4px solid transparent;
       }
 
-        .android-navigation .mdl-navigation__link:hover {
-          border-bottom: 4px solid #8bc34a;
+        .mdl-navigation__link:hover {
+          border-bottom: 4px solid #f50057;
         }
       .android-card-container .mdl-card__media {
         overflow: hidden;
@@ -71,7 +68,7 @@
         position: relative;
         height: 550px;
         width: auto;
-        background-color: #f3f3f3;
+        background-color: #aac7ff;
         background: url('images/header_bg.jpg');
         background-repeat: no-repeat;
         background-position: center;
@@ -124,26 +121,25 @@
     </head>
     <body>
         <!-- FAB -->
-        <a href="http://gusrsilva.github.io/"
-          target="_blank" id="email-fab"
+        <a id="email-fab"
           class="mdl-button mdl-js-button mdl-button--fab
                 mdl-button--raised mdl-js-ripple-effect
                 mdl-color--accent mdl-color-text--accent-contrast">
-                  <i class="material-icons">email</i>
+                  <i class="material-icons">person</i>
         </a>
         <!-- Right aligned menu on top of button  -->
         <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
             for="email-fab">
-          <li class="mdl-menu__item">Some Action</li>
-          <li class="mdl-menu__item">Another Action</li>
-          <li disabled class="mdl-menu__item">Disabled Action</li>
-          <li class="mdl-menu__item">Yet Another Action</li>
+          <li class="mdl-menu__item">LinkedIn</li>
+          <li class="mdl-menu__item">Github</li>
+          <li class="mdl-menu__item">E-mail</li>
+          <li class="mdl-menu__item">View Resume</li>
         </ul>
 
 
         <!-- Always shows a header, even in smaller screens. -->
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-          <header class="mdl-layout__header">
+          <header class="mdl-layout__header ">
             <div class="mdl-layout__header-row">
               <!-- Title -->
               <span class="mdl-layout-title"></span>
@@ -151,14 +147,17 @@
               <div class="mdl-layout-spacer"></div>
               <!-- Navigation. We hide it in small screens. -->
               <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" href="">Android Projects</a>
+                <a class="mdl-navigation__link" href="#home">Home</a>
+                <a class="mdl-navigation__link" href="#android_projects">Android Projects</a>
               </nav>
             </div>
           </header>
-          <div class="mdl-layout__drawer">
+          <!-- Make this small screen only once complete -->
+          <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <span class="mdl-layout-title">Gus Silva</span>
             <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="">Android Projects</a>
+              <a class="mdl-navigation__link" href="#home">Home</a>
+              <a class="mdl-navigation__link" href="#android_projects">Android Projects</a>
             </nav>
           </div>
           <main class="mdl-layout__content">
@@ -166,6 +165,7 @@
             <!-- Your content goes here -->
 
               <!-- HEADER -->
+              <a name="home"></a>
               <div class="header-section mdl-typography--text-center">
                 <div class="logo-font header-title">Gus Silva</div>
                 <img src="images/header_avi.png"/>
@@ -194,6 +194,7 @@
               </div>
               </div>
 
+            <a name="android_projects">
             <h3>
               Android Projects
               <i class="material-icons" style="color: lightgreen">android</i>
