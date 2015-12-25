@@ -110,6 +110,7 @@
         width: 48px;
         height: 32px;
         opacity: 0.5;
+        transition: opacity 0.3s;
       }
       svg:hover {
         opacity: 1.0;
@@ -148,7 +149,7 @@
               <!-- Navigation. We hide it in small screens. -->
               <nav class="mdl-navigation mdl-layout--large-screen-only">
                 <a class="mdl-navigation__link" href="#home">Home</a>
-                <a class="mdl-navigation__link" href="#android_projects">Android Projects</a>
+                <a class="mdl-navigation__link" href="#projects">Projects</a>
               </nav>
             </div>
           </header>
@@ -157,7 +158,7 @@
             <span class="mdl-layout-title">Gus Silva</span>
             <nav class="mdl-navigation">
               <a class="mdl-navigation__link" href="#home">Home</a>
-              <a class="mdl-navigation__link" href="#android_projects">Android Projects</a>
+              <a class="mdl-navigation__link" href="#projects">Projects</a>
             </nav>
           </div>
           <main class="mdl-layout__content">
@@ -194,94 +195,117 @@
               </div>
               </div>
 
-            <a name="android_projects">
-            <h3>
-              Android Projects
-              <i class="material-icons" style="color: lightgreen">android</i>
-            </h3>
+            <a name="projects">
+            <h3>Projects</h3>
 
-          <div class="android-card-container mdl-grid">
+              <div class="android-card-container mdl-grid">
 
-            <!-- BH Music Card -->
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/bhmusic_card_img.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">BH Music</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Simple, light, functional, material-designed music player.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/BHMusic">
-                   Learn More
-                   <!-- <i class="material-icons">chevron_right</i> -->
-                 </a>
-              </div>
-            </div>
-
-            <!-- PicturePerfect Card -->
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/pictureperfect_card_img.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">PicturePerfect</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Camera application developed at CalHacks 2015 that snaps a photo once everyone in the frame is smiling.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/PicturePerfect">
-                   Learn More
-                 </a>
-              </div>
-            </div>
-
-            <!-- DealOn! Card -->
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img id="dealon_learn_more" src="images/dealon_card_img.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">DealOn!</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">App desinged to help vendors instantly generate traffic during what would normally be slow hours.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" style="color: grey">
-                   Learn More
-                 </a>
-                 <div class="mdl-tooltip mdl-tooltip--large" for="dealon_learn_more">This project is currently being worked
-                                                                  on collaboratively and privately with
-                                                                  others. Please contact me with any questions.
+                <!-- BH Music Card -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__media">
+                    <img src="images/bhmusic_card_img.png">
+                  </div>
+                  <div class="mdl-card__title">
+                     <h4 class="mdl-card__title-text">BH Music</h4>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <span class="mdl-typography--font-light mdl-typography--subhead">Simple, light, functional, material-designed music player.</span>
+                  </div>
+                  <div class="mdl-card__actions">
+                     <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/BHMusic">
+                       Learn More
+                       <!-- <i class="material-icons">chevron_right</i> -->
+                     </a>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- Concentraid Card -->
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/concentraid_card_img.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Concentraid</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">As co-founder of Mobile Developers of Berkeley, mentored a group of beginning developers and helped with an app aimed to help students balance study and rest.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/SirjanK/Concentraid">
-                   Learn More
-                 </a>
-              </div>
-            </div>
-          </div>
-                <!-- END GRID -->
-              </div>
-              <!-- END PAGE CONTENT -->
+                <!-- PicturePerfect Card -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__media">
+                    <img src="images/pictureperfect_card_img.png">
+                  </div>
+                  <div class="mdl-card__title">
+                     <h4 class="mdl-card__title-text">PicturePerfect</h4>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <span class="mdl-typography--font-light mdl-typography--subhead">Camera application developed at CalHacks 2015 that snaps a photo once everyone in the frame is smiling.</span>
+                  </div>
+                  <div class="mdl-card__actions">
+                     <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/PicturePerfect">
+                       Learn More
+                     </a>
+                  </div>
+                </div>
+
+                <!-- DealOn! Card -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__media">
+                    <img id="dealon_learn_more" src="images/dealon_card_img.png">
+                  </div>
+                  <div class="mdl-card__title">
+                     <h4 class="mdl-card__title-text">DealOn!</h4>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <span class="mdl-typography--font-light mdl-typography--subhead">App desinged to help vendors instantly generate traffic during what would normally be slow hours.</span>
+                  </div>
+                  <div class="mdl-card__actions">
+                     <a disabled class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" style="color: grey">
+                       Learn More
+                     </a>
+                     <div class="mdl-tooltip mdl-tooltip--large" for="dealon_learn_more">This project is currently being worked
+                                                                      on collaboratively and privately with
+                                                                      others. Please contact me with any questions.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Concentraid Card -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__media">
+                    <img src="images/concentraid_card_img.png">
+                  </div>
+                  <div class="mdl-card__title">
+                     <h4 class="mdl-card__title-text">Concentraid</h4>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <span class="mdl-typography--font-light mdl-typography--subhead">As co-founder of Mobile Developers of Berkeley, mentored a group of beginning developers and helped with an app aimed to help students balance study and rest.</span>
+                  </div>
+                  <div class="mdl-card__actions ">
+                     <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/SirjanK/Concentraid">
+                       Learn More
+                     </a>
+                  </div>
+                </div>
+              </div> <!-- END projects GRID -->
+
+            <h3> Organizations </h3>
+              <div class="android-card-container mdl-grid">
+
+                <!-- BH Music Card -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__media">
+                    <img src="images/mdb_card_img.png">
+                  </div>
+                  <div class="mdl-card__title">
+                     <h4 class="mdl-card__title-text">Mobile Developers of Berkeley</h4>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <span class="mdl-typography--font-light mdl-typography--subhead">
+                      Co-founded the first mobile development club at Berkeley, which
+                      aims to help members dream, design, and develop their iOS or Android
+                      applications.
+                    </span>
+                  </div>
+                  <div class="mdl-card__actions">
+                     <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="mobiledevsberkeley.org">
+                       Learn More
+                       <!-- <i class="material-icons">chevron_right</i> -->
+                     </a>
+                  </div>
+                </div>
+              </div> <!-- END organizations grid-->
+
+        </div> <!-- END PAGE CONTENT -->
 
 
             </div>
