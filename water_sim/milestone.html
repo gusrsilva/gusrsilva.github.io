@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 Final Project</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+
+<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2017</h1>
+<h1 align="middle">Final Project: Fluid Simulation</h1>
+<h2 align="middle">Christine Zheng, CS184-aad, Gus Silva, CS184-aeq</h2>
+
+<br><br>
+
+<h2 align="middle">Summary of accomplishments</h2>
+<p>
+  The first thing that was necessary to finish was to implement a basic Particle class
+  to store the attributes of our particles. Then we needed to build a basic
+  renderer to view our particles. This took longer than we expected but we finally
+   got it finished. We then added the ability to move the camera around using the
+   mouse and keyboard.
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="particle_grid.png" width="480px" />
+      <figcaption align="middle">Basic Particle Renderer</figcaption>
+    </tr>
+  </table>
+</div>
+<p>
+  We could now finally start the fun part of implementing the water simulation.
+  The first necessary part of the physics was to have an efficient way of calculating
+  the neighbors of each particle. This was similar to how we did in class, hashing
+  the position after breaking the space in to buckets. There was one major difference
+  though in that we now needed to consider not only the particles in one bucket, but
+  also the 27 surrounding buckets.
+</p>
+<br>
+<p>
+  We spent some of the time on calculating and implementing the particle
+  forces based on incompresibility including Poly6 kernel and Spiky Kernel.
+  We thought we got it working but we found it unstable. We found the bug coming
+  from the calculation of lambda. We think that it may due to either numerical
+  problem or the implementation. We are working it and hopefully solve it soon.
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="particle_neighbors.gif" width="480px" />
+      <figcaption align="middle">Visualizing a Particle's Neighbors</figcaption>
+    </tr>
+  </table>
+</div>
+<p>
+  In the image above, we are visualizing the red particle's neighbors. All the
+  particles colored white are neighbors. As we zoom out, you can see that we get
+  the correct results with only those particles within our defined threshold being
+  considered neighbors. This image is also a good demonstration of our controls
+  working.
+</p>
+<br>
+<p>
+  After this we began implementing the math of the water simulation. However, as
+  we see in the next section, we are still stuck on it...
+</p>
+
+<h2 align="middle"> Preliminary Results</h2>
+<p>
+  After finishing the above we dove into implementing the math that makes the
+  simulation work. However, as previously mentioned, it did not go as smoothly
+  as we hoped and we are currently still stuck on incompressibility. We have
+  derived all of our gradients and implemented all the necessary functions, however,
+  we are not getting the desired results. We are unsure if there is a problem with
+  our math or our implementation. We have checked the math and feel fine so we believe
+  it is an implementation bug. We find that we are running in to some numerical
+  instabilities as our simulation progresses forward. The paper mentions this and
+  mentions a "relaxation parameter" used to fix this, however, they do not give the
+  value of the parameter they use and we find that any values we try do not help.
+</p>
+<p>
+  Below is an animation of our current, obviously incorrect, implementation
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="watersim.gif" width="480px" />
+      <figcaption align="middle">Particles appearance in grid</figcaption>
+    </tr>
+  </table>
+</div>
+
+<h2 align="middle"> Reflection On Progress Relative to Plan</h2>
+<p>
+  As expected, we are behind on our previous plan. We believe we are close to finishing
+  the incompressibility of the water which is the bulk of it, then we need only add
+  vorticity and viscocity which seems much simpler. After this, we will be back
+  on track and can begin attempting to add the extra things such as surface reconstruction
+  and user interaction mentioned in our plan.
+</p>
+
+<h2 align="middle"> Work Plan Update</h2>
+<h4> Week 3 (4/24 - 4/30)</h4>
+<p> Finish external forces implementations and apply heat property to particles to reflect the effect of temperature on the movement of particles. </p>
+
+<h4> Week 4 (5/1 - 5/5)</h4>
+<p> Implement wind effect by dragging with mouse. If time allows, try to get surface reconstruction working. </p>
+
+</body>
+</html>

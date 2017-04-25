@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 Final Project</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+
+<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2017</h1>
+<h1 align="middle">Final Project: Fluid Simulation</h1>
+<h2 align="middle">Christine Zheng, CS184-aad, Gus Silva, CS184-aeq</h2>
+
+<br><br>
+
+<h2 align="middle">Summary</h2>
+<p> In this project, we will implement Position based fluids and an interactive simulator. The project composes of two main components. The first, calculate particles positions and velocities based on constraints with neighboring particles, external forces, incompressibility, tensile instability, vorticity confinement, and viscosity. The second, create an interactive simulator that allows user to apply wind, change water particles texture, and visualize water surface. </p>
+
+<br><br>
+
+<h2 align="middle"> Problem Description </h2>
+
+  <h3> 1. Find constraints between neighboring particles </h3>
+  <p> This will be difficult because iterating over all particles at each time step will be very time consumming. We will divide the grid into boxes and place particles in different boxes according to their positions. This allows us to check only the particles in the adjacent boxes. </p>
+
+  <h3> 2. Find external forces </h3>
+  <p> External forces mainly come from incompressibility, tensile instability, vorticity, and viscosity. Without them, the particles movement won't look natural. We will apply each property to particles and update their positions.  </p>
+
+  <h3> 3. Apply wind by dragging with mouse </h3>
+  <p> We want users to have interactivity with the particles. By dragging mouse on particles, we want to apply force along the direction of the mouse to particles and move them according to the amount the user drags the mouse. We will first convert mouse position to model space given the x and y coordinates. Z coordinate will be determined by a depth buffer. </p>
+
+  <h3> 4. Apply heat to particles </h3>
+  <p> The higher the temperature, the faster the particles moves at a time period. We are planning to add temperature as a property to the particles and apply it to the velocity and position calculation to reflect the effect of temperature on the movement of particles. </p>
+
+  <h3> 5. Change particles appearance </h3>
+  <p> We also want users to able to change the texture and color of the particles for a more interesting and personalized visualization. We will reference project 2 to implement different shaders. We are planning to allow users use keyboard to change shaders. </p>
+
+  <h3> 6. Surface reconstruction </h3>
+  <p> We are considering to try creating a 2D surface from the particles. This will be very challenging, so we planning to start on it once we get the previous secions working. It is difficult to generate a smooth surface from the particles. </p>
+
+<br><br>
+
+<h2 align="middle">Goals and Deliverables</h2>
+<h3> What we plan to deliver: </h3>
+<p> We plan to accomplish problem 1, 2, 3 in the secion of Problem Description, which are correctly finding external forces from neighboring particles, incompressibility, tensile instability, vorticity, and viscosity, and apply them to particles. Our goal is to simulate natural fluid movement in a reasonable speed and accuracy. </p>
+
+<h3> Our aspirational plan: </h3>
+<p> If things go well and we have time, we plan to work on the rest of the problems in the section of Problem Description in the order of problem. For problem 4, applying heat to particles, we want to show that particles runs faster and more spread out by comparing with the one with less heat. We hope we can show at least 3 different levels of heat apply to particles and able to visualize the different effects. For particles appearance, we hope to provide at least 2 or 3 different shaders and many different colors so users can use keyboard to modify them. Lastly, for surface reconstruction, we may or may not have enough time to finish it. If we do, we hope to accomplish with a shaded translucent surface rendering in a reasonable speed and accuracy like the image below. </p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="water.png" width="480px" />
+      <figcaption align="middle">translucent surface</figcaption>
+    </tr>
+  </table>
+</div>
+
+<br><br>
+
+<h2 align="middle"> Schedule </h2>
+<h4> Week 1 (4/10 - 4/16)</h4>
+<p> Implement the particle class, calculate velocity and position based on external forces and apply to particles at each time step. Goal is to have a basic fluid movement working correctly.  </p>
+
+<h4> Week 2 (4/17 - 4/23)</h4>
+<p> Improve speed and memory usage by converting CPU to GPU code. Implement external force on particles from user mouse activity (wind effect). </p>
+
+<h4> Week 3 (4/24 - 4/30)</h4>
+<p> Implement heat effect on particle movement and different particle appearances. Start on surface reconstruction. </p>
+
+<h4> Week 4 (5/1 - 5/5)</h4>
+<p> Finishing up surface reconstruction and final project writeup. Prepare for in class presentation. </p>
+
+<br><br>
+
+<h2 align="middle"> Resources </h2>
+<p> Position based fluids: http://mmacklin.com/pbf_sig_preprint.pdf </p>
+<p> Surface reconstruction: http://developer.download.nvidia.com/presentations/2010/gdc/Direct3D_Effects.pdf </p>
+<p> Surface reconstruction: http://www.rug.nl/research/portal/files/14497408/05c5.pdf </p>
+<p> Shader: refer to Shaders section in project 2. http://cs184.eecs.berkeley.edu/article/9 </p>
+
+</body>
+</html>
