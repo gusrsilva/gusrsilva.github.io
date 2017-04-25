@@ -55,13 +55,6 @@
   also the 27 surrounding buckets.
 </p>
 <br>
-<p>
-  We spent some of the time on calculating and implementing the particle
-  forces based on incompresibility including Poly6 kernel and Spiky Kernel.
-  We thought we got it working but we found it unstable. We found the bug coming
-  from the calculation of lambda. We think that it may due to either numerical
-  problem or the implementation. We are working it and hopefully solve it soon.
-</p>
 <div align="center">
   <table style="width=100%">
     <tr>
@@ -93,7 +86,8 @@
   we are not getting the desired results. We are unsure if there is a problem with
   our math or our implementation. We have checked the math and feel fine so we believe
   it is an implementation bug. We find that we are running in to some numerical
-  instabilities as our simulation progresses forward. The paper mentions this and
+  instabilities as our simulation progresses forward when calculating the lambda
+  values. The paper mentions this and
   mentions a "relaxation parameter" used to fix this, however, they do not give the
   value of the parameter they use and we find that any values we try do not help.
 </p>
