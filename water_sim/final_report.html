@@ -77,11 +77,67 @@
 </b></font>
 
 <h3>Particle Renderer</h3>
+<p>
+  Before we could simulate anything, we needed something to view our results on. We
+  followed the excellent tutorials on <a href="opengl-tutorial.org">opengl-tutorial.org</a>
+  and learned how to use openGL to create a window and render objects. We then tailored
+  this to our need in order to render our particles that would eventually simulate
+  water.
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="image.png"/>
+      <figcaption align="middle">Basic Particle Renderer</figcaption>
+    </tr>
+  </table>
+</div>
+
 
 <h3>Controls</h3>
+<p>
+  We now wanted a way to navigate our space. Thankfully, the
+  <a href="http://www.glfw.org/docs/latest/group__input.html">GLFW Library</a> provides
+  plenty of functions to get user input. We decided to go with FPS like controls and so
+  the arrow keys allow the camera to strafe in the respective direction and moving the
+  mouse affects the direction in which the camera is pointed. We now have a convenient
+  way of viewing our particles from any point of view that we like.
+</p>
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="image.png"/>
+      <figcaption align="middle">Controls in actiom</figcaption>
+    </tr>
+  </table>
+</div>
+
 
 <h3>Water Simulation</h3>
+<p>
+  Now that we have a basic particle renderer and a way to navigate, let's add some
+  action to our particles!
+</p>
 <h4>Pseudocode</h4>
+<p>
+  As previously mentioned, we follow the technique described by Macklin and Muller in
+  the Position Based Fluids Paper (linked above). From a high level, the algorithm
+  is as follows:
+</p>
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="image.png"/>
+      <figcaption align="middle">PBF Pseudocode</figcaption>
+    </tr>
+  </table>
+</div>
+
 <h4>Predict Positions/ Apply Forces</h4>
 <h4>Finding Neighbors</h4>
 <h4>Enforcing Incompressibility</h4>
