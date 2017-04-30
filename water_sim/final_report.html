@@ -15,6 +15,15 @@
     font-family: 'Source Sans Pro', sans-serif;
   }
 </style>
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
 <title>CS 184 Final Project</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
@@ -110,7 +119,7 @@
     <tr>
       <td align="middle">
       <img src="image.png"/>
-      <figcaption align="middle">Controls in actiom</figcaption>
+      <figcaption align="middle">Controls in action</figcaption>
     </tr>
   </table>
 </div>
@@ -138,12 +147,130 @@
   </table>
 </div>
 
-<h4>Predict Positions/ Apply Forces</h4>
+<h4>Predict Positions and Apply Forces</h4>
+<p>
+  The first part of nearly any physically based simulation is of course to apply
+  external forces. For this part the only external forces acting on our particles
+  is gravity. We then do the classic update of the velocity as v = v + a * deltaT and update
+  position as x = x + v * deltaT. We used a constant deltaT of 1/60. This caused the real time
+  rendering, of course, to be out of sync and look unrealistic. In order to achieve the
+  realistic time we simply output an image each time step and then create a video from
+  these images with 60 FPS.
+</p>
+<p>
+  Here is our simulation so far with just external forces applied:
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="image.png"/>
+      <figcaption align="middle">Particle's Falling Due to Gravity</figcaption>
+    </tr>
+  </table>
+</div>
 <h4>Finding Neighbors</h4>
+The next step in the algorithm is to find a particles neighbors. In order to do this,
+we implement a similar technique to the one in our cloth simulation. We first divide
+our space into an evenly spaced grid. We decided to break the space into boxes
+with width, height, and depth equal to 1.5 times the radius of our particles. We then
+hash each particle based on which box it falls into. One key difference from the cloth
+simulation is that instead of considering only particles in the same box neighbors, we
+search the 27 surrounding boxes for neighbors as well. This is because we would
+like a more accurate count of neighbors so we can get a more accurate estimation
+of density in the next part. Thus we go through all the boxes mentioned above and add a
+particle j to particle i's list of neighbors if j is within radius*1.5 of i.
+</p>
+<p>
+  Below we visualize one particles neighbors. The particle we are looking at is in red,
+  and its neighbors are white.
+</p>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="image.png"/>
+      <figcaption align="middle">VIsualization of Neighbors</figcaption>
+    </tr>
+  </table>
+</div>
 <h4>Enforcing Incompressibility</h4>
-<h4>Handling Collisions</h4>
+<p>
+  The main bulk of simulating fluids, and thus the main bulk of the paper, is
+  maintaining constant density, or enforcing incompressibility. In other words,
+  for each time step, we want to move the particles such that the density around
+  each particle is as close to the rest density as possible.
+</p>
+<p>
+  Obviously, the first thing we need is a way to estimate the density. Now that we
+  have each particles' neighbors, this can be done using the SPH Density estimator.
+  We define the density for the ith particle as:
+</p>
+<center>
+  $$\rho_i = \sum_j m_j W(p_i - p_j, h)$$
+</center>
+<p>
+  Where $W(r,h)$ is a smoothing kernel. To be consistent with the paperm we used the
+  Poly6 Kernel for the non-gradient calculations and the Spiky Kernel for the gradient
+  calculations. One small note is that we give all particles an equal mass so we drop the $m_j$ term
+  in the above calculation.
+</p>
+<p>
+  We can now express our desire for a constant density as a mathematical constraint.
+  Thus, we define a constraint function for each particle, where the constraint
+  for the ith particle is:
+</p>
+<center>
+  $$C_i(p_1, .., p_n) = \frac{\rho_i}{\rho_0} - 1$$
+</center>
+<p>
+  Where $\rho_0$ is the rest density and $p_1, ..., p_n$ denotes the position
+  of the ith particle and all of its neighbors.
+</p>
+
+<h5>A Quick Aside On Position Based Dynamics</h5>
+<p>
+  As was previously mentioned, Particle Based Fluids works by incorporating the
+  density contraint into the Particle Based Dynamics method. PBD works by looking
+  for a correction to the positions such that the constraint function is zero. In other
+  words, PBD seeks a $\Delta p$ such that:
+  <center>
+    $$ C(p + \Delta p) = 0 $$
+  </center>
+  It does so by a series of Newton steps along the constraint gradient. In other words:
+  <center>
+    $$ \Delta p \approx \nabla C(p)\lambda $$
+    $$ C(p + \Delta p) \approx C(p) + \nabla C^T \Delta p = 0 $$
+    $$ C(p + \Delta p) \approx C(p) + \nabla C^T \nabla C(p) \lambda = 0 $$
+    $$ \lambda = - C(p)(\nabla C^T \nabla C(p))^{-1} $$
+  </center>
+
+  <h5>Back to Position Based Fluids</h5>
+  For position based fluids, we simply use our density constraint function as $C$ and get:
+  <center>
+    $$ \lambda_i = - \frac{C(p_1, ..., p_n)}{\sum_k |\nabla_{p_k} C_i|^2} $$
+  </center>
+  In order to prevent numerical instability in the denominatr, we use Constraint Force Mixing,
+  which mixes some of the constraint force back in to the constraint. The result ends up being
+  that we add some constant value $\epsilon$ to the denominator and so our final lambda calculation
+  for the ith particle becomes:
+  <center>
+    $$ \lambda_i = - \frac{C(p_1, ..., p_n)}{\sum_k |\nabla_{p_k} C_i|^2 + \epsilon} $$
+  </center>
+</p>
+<p>
+  Now recall that $\Delta p = \nabla C(p) \lambda$. We have now solved for everything we
+  need to in order to calculate $\Delta p$, which is the change in postition such that the constraint
+  function equals zero. In our case, this means we now can calulate the change in each particle's
+  position such that its density is about the same as our rest density! For each particle i,
+  the total number of corrections is:
+  <center>
+    $$ \Delta p_i = \frac{1}{\rho0} \sum_j (\lambda_i + \lambda_j) \nabla W(p_i - p_j, h) $$
+  </center>
+</p>
+
 <h4>Update Velocity with Vorticity Confinement and XSPH Viscosity</h4>
-<h4>Improving visuals with ""</h4>
+<h4>Improving visuals with "foam"</h4>
 
 
 
