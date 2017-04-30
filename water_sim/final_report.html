@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 Final Project</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+
+<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2017</h1>
+<h1 align="middle">Final Report: Fluid Simulation</h1>
+<h2 align="middle">Christine Zheng, CS184-aad, Gus Silva, CS184-aeq</h2>
+
+<div align="center">
+  <a href=" .com">Link the video you presented in your Final Presentation on your report webpage.</a>
+</div>
+
+<h2 align="middle">Abstract</h2>
+<p>
+  In this project we put the skills we have learned in CS184 to use. We first develop a simple
+  particle renderer with controls. We then attempt to used a particle-based approach to simulate water.
+  The key to simulating any fluid is enforcing incompressibility. Unfortunately, this is
+  computationally expensive. In the paper
+  <a href="http://mmacklin.com/pbf_sig_preprint.pdf">Position Based Fluids</a>,
+  Muller and Macklin describe a method for simulating fluids in a relatively efficient
+  manner while not requiring impractical timesteps. We attempt to implement the
+  various ideas in this paper such as enforcing incompressibility by incorporating
+  density constraints into Position Based Dynamics, simulating surface tension by adding
+  artificial pressure, and reducing damping by adding vorticity confinement and viscosity.
+</p>
+
+<br>
+<div align="center">
+  <table style="width=100%">
+    <tr>
+      <td align="middle">
+      <img src="image.png" width="480px" />
+      <figcaption align="middle">Example Caption</figcaption>
+    </tr>
+  </table>
+</div>
+
+<h2 align="middle"> Technical Approach</h2>
+<p>
+  A 1-2 page summary of your technical approach, techniques used, algorithms
+  implemented, etc. (use references to papers or other resources for further detail).
+  Highlight how your approach varied from the references used (did you implement a
+  subset, or did you change or enhance anything), the unique decisions you made
+  and why.
+</p>
+<p>
+  A description of problems encountered and how you tackled them.
+</p>
+<p>
+  A description of lessons learned.
+</p>
+
+<h2 align="middle"> Results</h2>
+<p>
+  Your final images, animations, video of your system (whichever is relevant).
+  You can include results that you think show off what you built but that you
+  did not have time to go over on presentation day.
+</p>
+
+<h2 align="middle"> Contributions</h2>
+<p>
+  A clear description of the work contributed by each team member
+</p>
+
+</body>
+</html>
