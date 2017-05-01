@@ -33,20 +33,17 @@
 <body>
 
 <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2017</h1>
-<h1 align="middle">Final Report: Fluid Simulation</h1>
+<h1 align="middle">Fluid Simulation</h1>
 <h2 align="middle">Christine Zheng, CS184-aad, Gus Silva, CS184-aeq</h2>
 
 <div align="center">
-  <a href=" .com">Link the video you presented in your Final Presentation on your report webpage.</a>
+  <a href="final_presentation.mp4">Final Presentation Video</a>
 </div>
 
 <h2 align="middle">Abstract</h2>
-<font color="red"><b>
-  A paragraph summary of the entire project.
-</b></font>
 <p>
   In this project we put the skills we have learned in CS184 to use. We first develop a simple
-  particle renderer with controls. We then attempt to used a particle-based approach to simulate water.
+  particle renderer with controls. We then attempt to use a particle-based approach to simulate water.
   The key to simulating any fluid is enforcing incompressibility. Unfortunately, this is
   computationally expensive. In the paper
   <a href="http://mmacklin.com/pbf_sig_preprint.pdf">Position Based Fluids</a>,
@@ -59,26 +56,11 @@
 
 
 <h2 align="middle"> Technical Approach</h2>
-<font color="red"><b>
-  A 1-2 page summary of your technical approach, techniques used, algorithms
-  implemented, etc. (use references to papers or other resources for further detail).
-  Highlight how your approach varied from the references used (did you implement a
-  subset, or did you change or enhance anything), the unique decisions you made
-  and why.
-</b></font>
-<br><br>
-<font color="red"><b>
-  A description of problems encountered and how you tackled them.
-</b></font>
-<br><br>
-<font color="red"><b>
-  A description of lessons learned.
-</b></font>
 
 <h3>Particle Renderer</h3>
 <p>
   Before we could simulate anything, we needed something to view our results on. We
-  followed the excellent tutorials on <a href="opengl-tutorial.org">opengl-tutorial.org</a>
+  followed the excellent tutorials on <a href="http://www.opengl-tutorial.org">opengl-tutorial.org</a>
   and learned how to use openGL to create a window and render objects. We then tailored
   this to our need in order to render our particles that would eventually simulate
   water.
@@ -182,6 +164,7 @@ particle j to particle i's list of neighbors if j is within radius*1.5 of i.
     </tr>
   </table>
 </div>
+
 <h4>Enforcing Incompressibility</h4>
 <p>
   The main bulk of simulating fluids, and thus the main bulk of the paper, is
@@ -198,7 +181,7 @@ particle j to particle i's list of neighbors if j is within radius*1.5 of i.
   $$\rho_i = \sum_j m_j W(p_i - p_j, h)$$
 </center>
 <p>
-  Where $W(r,h)$ is a smoothing kernel. To be consistent with the paperm we used the
+  Where $W(r,h)$ is a smoothing kernel. To be consistent with the paper we used the
   Poly6 Kernel for the non-gradient calculations and the Spiky Kernel for the gradient
   calculations. One small note is that we give all particles an equal mass so we drop the $m_j$ term
   in the above calculation.
@@ -219,7 +202,7 @@ particle j to particle i's list of neighbors if j is within radius*1.5 of i.
 <h5>A Quick Aside On Position Based Dynamics</h5>
 <p>
   As was previously mentioned, Particle Based Fluids works by incorporating the
-  density contraint into the Particle Based Dynamics method. PBD works by looking
+  density constraint into the Particle Based Dynamics method. PBD works by looking
   for a correction to the positions such that the constraint function is zero. In other
   words, PBD seeks a $\Delta p$ such that:
   <center>
@@ -238,7 +221,7 @@ particle j to particle i's list of neighbors if j is within radius*1.5 of i.
   <center>
     $$ \lambda_i = - \frac{C(p_1, ..., p_n)}{\sum_k |\nabla_{p_k} C_i|^2} $$
   </center>
-  In order to prevent numerical instability in the denominatr, we use Constraint Force Mixing,
+  In order to prevent numerical instability in the denominator, we use Constraint Force Mixing,
   which mixes some of the constraint force back in to the constraint. The result ends up being
   that we add some constant value $\epsilon$ to the denominator and so our final lambda calculation
   for the ith particle becomes:
@@ -256,27 +239,107 @@ particle j to particle i's list of neighbors if j is within radius*1.5 of i.
     $$ \Delta p_i = \frac{1}{\rho0} \sum_j (\lambda_i + \lambda_j) \nabla W(p_i - p_j, h) $$
   </center>
 </p>
+<p>
+  At this point, using the above position update rule we ge the following:
+</p>
+<div align="center">
+  <video width="600" controls="controls" loop="true">
+    <source src="dampened.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+</div>
+
 
 <h4>Update Velocity with Vorticity Confinement and XSPH Viscosity</h4>
+<p>
+  In the above video, we get good results, but the movement is very dampened. This is a side
+  effect of using Position Based Dynamics. One way to fix this is to increase the
+  number of iterations but this quickly becomes unreasonable. A better solution is the
+  one used in the Position Based Fluids paper which is to
+  add vorticity confinement and viscosity to our simulation.
+</p>
+<p> Vorticity is the measurement of spin and rotation in a fluid. It can be observed by watching particles' relative displacements when they move along the flow. We added the vorticity by applying a corrective force. We estimated the vorticity of a particle followed by the equation from the paper:
+  <center>
+    $$ w_i = \sum_j v_{ij} \times \nabla_{p_j} W(p_i - p_j, h) $$
+  </center>
+where $$ v_{ij} = v_j - v_i $$ the difference between the current particle's velocity and the velocity of its neighbor particles. We can then calculate the corrective force using below equation:
+  <center>
+    $$ f^{vorticity}_i = \epsilon (N \times w_i) $$
+  </center>
+where $N$ is: $$ N = \frac{\nabla_{|w|_i}}{|\nabla_{|w|_i}|} $$
+</p>
+
+<p> We also apply viscosity to our water to reflect the "thickness" of the fluid. Similar to the shearing force from the cloth simulation, fluid also have shearing force. Viscosity is the force which fluid resists that distortion. Thick fluid has high viscosity, thin fluid like water has low viscosity. So water particles appear to not stick compared to oil particles. We can do so by updating the particle's velocity as:
+$$ v^{new}_i = v_i + c \sum_j v_{ij} * W(p_i - p_j, h) $$ </p>
+<p>
+  Adding the vorticity confinement and viscocity to our simulation gives us the following:
+</p>
+<div align="center">
+  <video width="600" controls="controls" loop="true">
+    <source src="vort.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+</div>
+<p>
+  As we can see, the fluid is much more...fluid. Less damping occurs, we get nicer
+  splashes, and the fluid rebounds and  "sloshes" in a manner more similar to real
+  water.
+</p>
+
+
+
 <h4>Improving visuals with "foam"</h4>
+<p> We originally had all the particles appear as blue. We think it is better to have the particles with higher velocity to appear in whiter colors so the fluid looks more like foam. In order to change the particles' colors according to their velocities. We followed the equation from the original report:
+  $$ c = 1 - (\frac{1}{v^2_x + v^2_y + v^2_z})^2 $$ $c$ represents the whiteness of the particles' color. So the higher the velocity, the bigger the c is. We maintain c as a positive value by capping it between 0 and 1. We used HSL to get the updated color and converted it back to RGB and applied it to the particles.
+ </p>
+<p>
+  This was the last touch and we now get our final result:
+</p>
 
+<h4 align="middle"> Final Result</h4>
+<div align="center">
+  <video width="600" controls="controls" loop="true">
+    <source src="final.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+</div>
 
-
-
-<h2 align="middle"> Results</h2>
-<font color="red"><b>
-  Your final images, animations, video of your system (whichever is relevant).
-  You can include results that you think show off what you built but that you
-  did not have time to go over on presentation day.
-</b></font>
+<h4>Problems Encountered and Lessons Learned</h4>
+<ul>
+  <li>
+    Don't underestimate the basics. We originally allocated virtually no time in
+    our schedule plan for developing the basic renderer. However, this proved to
+    take much more time than we expected to get everything working.
+  </li>
+  <li>
+    Timing is everything. In an effort to lock our simulation in with real time,
+  we originally calculated $\Delta t$ each iteration using the true difference
+in time since the last iteration. Early on this seemed fine. However, as our simulation
+grew more complex we began getting strange results. We eventually realized, after visiting
+office hours (thanks Kevin!), that our timestep was too small and this was causing problems.
+We changed our $\Delta t$ to a constant 1/60 and things returned to normal.
+  </li>
+  <li>
+    Small tweaks in parameters can make a huge difference. As one can see, this
+    simulation method has many tweakable parameters. Lambda relaxation parameter,
+    rest density, particle radius, vorticity epsilon, viscosity constant, etc. We
+    originally underestimated how important these parameters were and so after we initially
+    implemented the algorithm we were not getting good results. Again, after visiting
+    OH we were told that these parameters were important and we should spend time
+    carefully tweaking them to perfection. In doing this we realized how important and  sensitive
+     they were. For example, a change of 0.1 in the vorticity epsilon could make the difference
+     between a great simulation and a completely out of control one.
+  </li>
+</ul>
 
 <h2 align="middle"> Contributions</h2>
-<font color="red"><b>
-  A clear description of the work contributed by each team member
-</b></font>
-<h4>Christine Zheng</h4>
 
-<h4>Gustavo Silva</h4>
+<h4>Christine Zheng</h4> - Controls, Applying Forces, Viscocity Confinement, Vorticity
+
+<h4>Gustavo Silva</h4> - Particle renderer, Finding Neighbors, Enforcing Incompressibility, Improving Visuals
 
 </body>
 </html>
