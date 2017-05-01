@@ -247,7 +247,6 @@ particle j to particle i's list of neighbors if j is within radius*1.5 of i.
     <source src="dampened.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <br>
 </div>
 
 
@@ -267,11 +266,17 @@ where $$ v_{ij} = v_j - v_i $$ the difference between the current particle's vel
   <center>
     $$ f^{vorticity}_i = \epsilon (N \times w_i) $$
   </center>
-where $N$ is: $$ N = \frac{\nabla_{|w|_i}}{|\nabla_{|w|_i}|} $$
+where $N$ is:
+<center>
+$$ N = \frac{\nabla_{|w|_i}}{|\nabla_{|w|_i}|} $$
+</center>
 </p>
 
 <p> We also apply viscosity to our water to reflect the "thickness" of the fluid. Similar to the shearing force from the cloth simulation, fluid also have shearing force. Viscosity is the force which fluid resists that distortion. Thick fluid has high viscosity, thin fluid like water has low viscosity. So water particles appear to not stick compared to oil particles. We can do so by updating the particle's velocity as:
-$$ v^{new}_i = v_i + c \sum_j v_{ij} * W(p_i - p_j, h) $$ </p>
+</p>
+<center>
+  $$ v^{new}_i = v_i + c \sum_j v_{ij} * W(p_i - p_j, h) $$
+</center>
 <p>
   Adding the vorticity confinement and viscocity to our simulation gives us the following:
 </p>
@@ -292,7 +297,11 @@ $$ v^{new}_i = v_i + c \sum_j v_{ij} * W(p_i - p_j, h) $$ </p>
 
 <h4>Improving visuals with "foam"</h4>
 <p> We originally had all the particles appear as blue. We think it is better to have the particles with higher velocity to appear in whiter colors so the fluid looks more like foam. In order to change the particles' colors according to their velocities. We followed the equation from the original report:
-  $$ c = 1 - (\frac{1}{v^2_x + v^2_y + v^2_z})^2 $$ $c$ represents the whiteness of the particles' color. So the higher the velocity, the bigger the c is. We maintain c as a positive value by capping it between 0 and 1. We used HSL to get the updated color and converted it back to RGB and applied it to the particles.
+</p>
+<center>
+  $$ c = 1 - (\frac{1}{v^2_x + v^2_y + v^2_z})^2 $$
+</center>
+ $c$ represents the whiteness of the particles' color. So the higher the velocity, the bigger the c is. We maintain c as a positive value by capping it between 0 and 1. We used HSL to get the updated color and converted it back to RGB and applied it to the particles.
  </p>
 <p>
   This was the last touch and we now get our final result:
