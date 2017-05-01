@@ -57,16 +57,6 @@
   artificial pressure, and reducing damping by adding vorticity confinement and viscosity.
 </p>
 
-<br>
-<div align="center">
-  <table style="width=100%">
-    <tr>
-      <td align="middle">
-      <img src="image.png" width="480px" />
-      <figcaption align="middle">Example Caption</figcaption>
-    </tr>
-  </table>
-</div>
 
 <h2 align="middle"> Technical Approach</h2>
 <font color="red"><b>
@@ -97,7 +87,7 @@
   <table style="width=100%">
     <tr>
       <td align="middle">
-      <img src="image.png"/>
+      <img src="basic_renderer.png" width="600"/>
       <figcaption align="middle">Basic Particle Renderer</figcaption>
     </tr>
   </table>
@@ -115,10 +105,12 @@
 </p>
 </p>
 <div align="center">
-<video width="480" height="320" controls="controls" loop="true">
-<source src="test.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <video width="600" controls="controls" loop="true">
+    <source src="controls.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  Controls in action
 </div>
 
 <h3>Water Simulation</h3>
@@ -137,7 +129,7 @@
   <table style="width=100%">
     <tr>
       <td align="middle">
-      <img src="image.png"/>
+      <img src="code.png" width="400"/>
       <figcaption align="middle">PBF Pseudocode</figcaption>
     </tr>
   </table>
@@ -157,14 +149,14 @@
   Here is our simulation so far with just external forces applied:
 </p>
 <div align="center">
-  <table style="width=100%">
-    <tr>
-      <td align="middle">
-      <img src="image.png"/>
-      <figcaption align="middle">Particle's Falling Due to Gravity</figcaption>
-    </tr>
-  </table>
+  <video width="600" controls="controls" loop="true">
+    <source src="gravity_fall.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  Particles falling due to gravity
 </div>
+
 <h4>Finding Neighbors</h4>
 The next step in the algorithm is to find a particles neighbors. In order to do this,
 we implement a similar technique to the one in our cloth simulation. We first divide
@@ -185,7 +177,7 @@ particle j to particle i's list of neighbors if j is within radius*1.5 of i.
   <table style="width=100%">
     <tr>
       <td align="middle">
-      <img src="image.png"/>
+      <img src="particle_neighbors.gif" width="600"/>
       <figcaption align="middle">VIsualization of Neighbors</figcaption>
     </tr>
   </table>
