@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <style>
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            text-align: center;
+            background: #2fd6bd;
+        }
+
+        .flex-container>* {
+            padding: 15px;
+            -webkit-flex: 1 100%;
+            flex: 1 100%;
+        }
+
+        .article {
+            text-align: left;
+        }
+        body {
+            margin: 0;
+            text-align: center;
+        }
+
+        .title {
+            padding: 10px;
+            background: #303F9F;
+            width: 100%;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-weight: 100;
+            font-size: 50px;
+        }
+
+        h2 {
+            color: #2fd6bd;
+            font-weight: 100;
+            font-size: 30px;
+        }
+
+        hr {
+            border-color: #2fd6bd;
+        }
+
+        html {
+            font-family: Futura, "Trebuchet MS", Roboto, sans-serif !important;
+            color: #333333
+        }
+
+        header {
+            background: #2fd6bd;
+            color: white;
+            width: 100%;
+        }
+
+        footer {
+            padding: 35px;
+            background: #2fd6bd;
+            color: white;
+        }
+
+        table {
+            border-radius: 20px;
+            padding: 10px;
+            padding-bottom: 20px;
+            background: #efefef;
+            width: auto;
+        }
+        .gray {
+            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+            filter: grayscale(100%);
+        }
+
+        .nav {
+            background: #eee;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav ul a {
+            text-decoration: none;
+        }
+
+        .floated_img {
+            float: left;
+            width: 100%;
+        }
+        img { transition: all .2s ease-in-out; }
+        img:hover { transform: scale(1.01); }
+
+        @media all and (min-width: 768px) {
+            .nav {
+                text-align: left;
+                -webkit-flex: 1 auto;
+                flex: 1 auto;
+                -webkit-order: 1;
+                order: 1;
+            }
+            .article {
+                -webkit-flex: 5 0px;
+                flex: 5 0px;
+                -webkit-order: 2;
+                order: 2;
+            }
+            footer {
+                -webkit-order: 3;
+                order: 3;
+            }
+        }
+
+        .inner {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .card {
+          background: #ffffff;
+          border-radius: 20px;
+          display: inline-block;
+          height: auto;
+          margin: 1rem;
+          position: relative;
+          width: auto;
+          box-shadow: 0 38px 76px rgba(0,0,0,0.30), 0 30px 24px rgba(0,0,0,0.22);
+          margin: 50px;
+          padding: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="flex-container">
+        <header>
+            <h1>Low Poly Art </h1>
+            <table align="center" style="padding: 1px; border-radius: 0px;">
+              <tr>
+                <th><img src="images/poly_art/header.png" width="240px"/></th>
+              </tr>
+            </table>
+            <h3>Gustavo Silva</h3>
+        </header>
+        <div class="card">
+          <section>
+              <article class="article">
+
+                  <h2>Overview</h2>
+                  <hr>
+                  <p>
+                    Previously, I had used triangulations along with other compuatational
+                    image manipulation techniques to perform actions such as creating
+                    face morphing animations <a href="index.hmtl">here</a>.
+                  </p>
+                  <p>
+                    After doing this, I experimented with more cool applications
+                    of triangulations and discovered a more artistic use: creating
+                    "Low Poly" art, or art made from using a relatively low amount
+                    of polygons.
+                  </p>
+
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+
+                  <h2>Triangulation</h2>
+                  <hr>
+                  <p>
+                    As a quick refresher, we first establish critical points in
+                    the image. We then use the points to create a
+                    <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">Delaunay Triangulation</a>.
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th colspan="2">Triangulations Example</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/imA_triangulation.png" width="300px"></th>
+                      <th><img src="images/imB_triangulation.png" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    Instead of using the triangulation to create the morph, however,
+                    we now do something different. We now color all of the pixels
+                    that lie within the triangle the color of the middle pixel of
+                    the triangle. Of course, we could try other techniques such
+                    as coloring the triangle the mean or mode color but I found
+                    the center color to be the most visually satisfying and, of course,
+                    computationally efficient.
+                  </p>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+                <h2>Results</h2>
+                <hr>
+                <div style="padding-left: 15px">
+                  <table align="center" style="width: auto;">
+                    <tr>
+                      <th><img src="images/imA.jpg" width="500px"></th>
+                      <th><img src="images/poly_art/poly_me.jpg" width="500px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/imB.jpg" width="500px"></th>
+                      <th><img src="images/poly_art/poly_obama.jpg" width="500px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/poly_art/bentley.jpg" width="500px"></th>
+                      <th><img src="images/poly_art/poly_bentley.jpg" width="500px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/poly_art/hawaii.jpg" width="500px"></th>
+                      <th><img src="images/poly_art/poly_hawaii.jpg" width="500px"></th>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+                  As you may notice, in order for the poly-art images to have
+                  distinguishable features, we may need more points than our previous
+                  triangulations. Generally, there needs to be a higher concentration
+                  of points in the areas of small and important features. Using our
+                  knowledge of working with images in the frequency domain, I believe
+                  the point selection can possibly be automated by scattering a high
+                  concentration of points in areas of high frequency and low concentration
+                  of points in areas of low frequency. Furthermore, to keep the shapes
+                  close to the same, we could be sure to assign points to edges. Perhaps
+                  as a future project I will attempt to create a fully automatic
+                  Low Poly Art creator.
+                </p>
+              </article>
+          </section>
+
+      </div>
+
+        <footer>
+            Gustavo Silva
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

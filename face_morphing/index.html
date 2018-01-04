@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <style>
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            text-align: center;
+            background: #2fd6bd;
+        }
+
+        .flex-container>* {
+            padding: 15px;
+            -webkit-flex: 1 100%;
+            flex: 1 100%;
+        }
+
+        .article {
+            text-align: left;
+        }
+        body {
+            margin: 0;
+            text-align: center;
+        }
+
+        .title {
+            padding: 10px;
+            background: #303F9F;
+            width: 100%;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-weight: 100;
+            font-size: 50px;
+        }
+
+        h2 {
+            color: #2fd6bd;
+            font-weight: 100;
+            font-size: 30px;
+        }
+
+        hr {
+            border-color: #2fd6bd;
+        }
+
+        html {
+            font-family: Futura, "Trebuchet MS", Roboto, sans-serif !important;
+            color: #333333
+        }
+
+        header {
+            background: #2fd6bd;
+            color: white;
+            width: 100%;
+        }
+
+        footer {
+            padding: 35px;
+            background: #2fd6bd;
+            color: white;
+        }
+
+        table {
+            border-radius: 20px;
+            padding: 10px;
+            padding-bottom: 20px;
+            background: #efefef;
+            width: auto;
+        }
+        .gray {
+            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+            filter: grayscale(100%);
+        }
+
+        .nav {
+            background: #eee;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav ul a {
+            text-decoration: none;
+        }
+
+        .floated_img {
+            float: left;
+            width: 100%;
+        }
+        img { transition: all .2s ease-in-out; }
+        img:hover { transform: scale(1.01); }
+
+        @media all and (min-width: 768px) {
+            .nav {
+                text-align: left;
+                -webkit-flex: 1 auto;
+                flex: 1 auto;
+                -webkit-order: 1;
+                order: 1;
+            }
+            .article {
+                -webkit-flex: 5 0px;
+                flex: 5 0px;
+                -webkit-order: 2;
+                order: 2;
+            }
+            footer {
+                -webkit-order: 3;
+                order: 3;
+            }
+        }
+
+        .inner {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .card {
+          background: #ffffff;
+          border-radius: 20px;
+          display: inline-block;
+          height: auto;
+          margin: 1rem;
+          position: relative;
+          width: auto;
+          box-shadow: 0 38px 76px rgba(0,0,0,0.30), 0 30px 24px rgba(0,0,0,0.22);
+          margin: 50px;
+          padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flex-container">
+        <header>
+            <h1>Face Morphing </h1>
+            <table align="center" style="padding: 1px; border-radius: 0px;">
+              <tr>
+                <th><img src="images/header1.jpg" width="120px"/></th>
+                <th><img src="images/header2.jpg" width="120px"/></th>
+                <th><img src="images/header3.jpg" width="120px"/></th>
+                <th><img src="images/header4.jpg" width="120px"/></th>
+                <th><img src="images/header5.jpg" width="120px"/></th>
+              </tr>
+            </table>
+            <h3>Gustavo Silva</h3>
+        </header>
+        <div class="card">
+
+          <section>
+              <article class="article">
+                <a name="overview">
+                  <h2>Overview</h2>
+                  <hr>
+                  <p>
+                    Most of the prior image manipulation techniques that I've
+                    tinkered with were done through filtering. In filtering, it is the
+                    range of the image that is changed. We now shift to point processing,
+                    image warping, and image morphing, which are processes with which we
+                    can change the domain of an image.
+                  </p>
+                  <p>
+                    On one of the most popular, illustrative, and fun applications of this
+                    is face morphing. Face morphing is creating an animation such that one face
+                    smoothly morphs into another face.
+                  </p>
+
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+                <a name="correspondence_points">
+                  <h2>Correspondence Points</h2>
+                  <hr>
+                  <p>
+                    Before we can dive straight in to the morphing, we need a way of
+                    deciding how a face should morph in to the other. This can be accomplished
+                    by defining correspondence points. That is, we can use points to identify
+                    the same features on the faces. For example, we can have points surrounding
+                    the eyes of the faces on both images. This tells us that we should transform
+                    the eye one on face to match the eye that we marked on the other face.
+                  </p>
+                  <p>
+                    Now the points alone are not enough, since the points are only a pixel,
+                    we can not only make the corresponding points match and expect the entire
+                    image to match. What we really want is for the pixels around each point to
+                    match as well. In order to accomplish this, we turn to triangulation.
+                  </p>
+                  <p>
+                    After choosing our correspondence points, we can create a triangulation.
+                    Once we create the triangulation, we now have corresponding triangular sections
+                    of the image. Now our task is simply to transform each triangle such that
+                    the corresponding triangles match.
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th colspan="2">Triangulations Example</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/imA_triangulation.png" width="300px"></th>
+                      <th><img src="images/imB_triangulation.png" width="300px"></th>
+                    </tr>
+                  </table>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+                  <a name="mid_way_face">
+                  <h2>The "Mid-Way Face"</h2>
+                  <hr>
+                  <p>
+                    Before we compute all of the frames required for the morphing
+                    animation, let's examine just one frame in particular: the frame
+                    at the exact halfway point when morphing between face 1 and face 2.
+                    This will give us a concrete example and allow us to examine the
+                    process in more detail, afterwhich we can generalize the process
+                    to explain how we generate all of the frames.
+                  </p>
+                  <p>
+                    As previously mentioned, once we have the corresponding triangles,
+                    the problem boils down to computing the transformations to transform
+                    each triangle in face 1 to its corresponding triangle in face 2.
+                    Since our regions are defined by 3 points, we can use an affine
+                    transformation to do this. However, in order to minimize distortion,
+                    instead of morphing one face into the other, it is better to morph
+                    both images to some mean shape, which is easily found by averaging
+                    the corresponding points and calculating an average triangulation.
+                  </p>
+                  <h4>Inverse Warping & Interpolation</h4>
+                  <p style="padding-left: 15px">
+                    This is a good time to discuss inverse warping and interpolation.
+                    We know that we are going to use an affine transformation to get from
+                    one set of triangles to the other. The problem is, if we simply look at
+                    each of our original points and then apply our transformation and move
+                    the value to our new point we may have holes since we are not guaranteed
+                    that every value will get mapped to. It is instead better to
+                    look at each of our new points and find which value should go there using
+                    the inverse transformation. This ensures every pixel in our new image
+                    has a value. However, what if the pixel we are choosing our color
+                    from is not an exact location? There are several methods to handle
+                    this such as choosing the nearest neighbor or interpolation.
+                    <br><br>
+                    As an example, here is my face warped to the average shape of mine
+                    and President Obama's face with foward and inverse warping:
+
+                    <table align="center" style="width: auto;">
+                      <tr style="text-align: center;">
+                        <th>Forward Warping</th>
+                        <th>Inverse Warping</th>
+                      </tr>
+                      <tr>
+                        <th><img src="images/forward_warping.png" width="300px"></th>
+                        <th><img src="images/inverse_warping.jpg" width="300px"></th>
+                      </tr>
+                    </table>
+                  </p>
+                  <p>
+                    Now, we have found our affine transformation to transform the set
+                    of triangles in both faces to the corresponding triangles in the average
+                    shape, we have our inverse warping and interpolation to prevent
+                    empty areas, but how do we combine the two images? Well this is simply a matter of cross
+                    dissolving, meaning we we take the values at each pixel from both images
+                    and, in the case of the midway face, average them.
+                  </p>
+                  <p>
+                    Here are the results of finding the midway face:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Face 1</th>
+                      <th>Face 2</th>
+                      <th>Midway Face</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/imA.jpg" width="300px"></th>
+                      <th><img src="images/imB.jpg" width="300px"></th>
+                      <th><img src="images/midway_face.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+                  <a name="morphing_sequence">
+                  <h2>The Morphing Sequence</h2>
+                  <hr>
+                  <p>
+                    Now let's examine how we can generalize the above process to create
+                    a sequence of frames that, when combined, produce a smooth animation
+                    from face 1 to face 2.
+                  </p>
+                  <p>
+                    In the case of the midway face, we morphed each image to an
+                    <u>average</u> shape and then took the pixel values of each of
+                    the warped images and <u>averaged</u> them. In the case of the
+                    mid-way face, using the true average makes sense. So how should we
+                    adjust if we are not producing the frame at the exact middle of the
+                    animation? Simple, we just take use a <u>weighted average</u> instead
+                    of the true average. Since we are producing an animation, it only makes
+                    sense that our weight is a function of time.
+                  </p>
+                  <p>
+                    Here is the final result:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Face 1</th>
+                      <th>Face 2</th>
+                      <th>Morph Animation</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/imA.jpg" width="300px"></th>
+                      <th><img src="images/imB.jpg" width="300px"></th>
+                      <th><img src="images/me_to_obama.gif" width="300px"></th>
+                    </tr>
+                  </table>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+                  <a name="mean_face">
+                  <h2>The "Mean Face" of a Population</h2>
+                  <hr>
+                  <p>
+                    Merging from one face to another is not the only application
+                    of this technique. We can also use this process to calculate the
+                    average face of a population.
+                  </p>
+                  <p>
+                    As an example we will use
+                    <a href="http://www2.imm.dtu.dk/~aam/datasets/datasets.html">this data set of Danish engineers:</a>
+
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Danish Engineers</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/danish_engineers.png" width="500px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    Thankfully, the set of images also comes pre annotated with
+                    correspondence points. So in order to calculate the mean face,
+                    we simply:
+                    <ol>
+                      <li>Take the average of all of the corresponding points</li>
+                      <li>Create an average shape using the resulting triangulation
+                      from the average points</li>
+                      <li>Align all the faces by warping each face to this average shape</li>
+                      <li>Cross dissolve all of the warped faces</li>
+                    </ol>
+                  </p>
+                  <p>
+                    Here are a few examples of some of the engineers warped to the
+                    average shape:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr>
+                      <th><img src="images/morphed_to_average1.jpg" width="300px"></th>
+                      <th><img src="images/morphed_to_average2.jpg" width="300px"></th>
+                      <th><img src="images/morphed_to_average3.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    And here is the final result of the computed average face:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>The Average Male Danish Engineer</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/mean_face.jpg" width="500px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    Here is an example of two of the engineers morphing into the average:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr>
+                      <th><img src="images/engineers_to_average.gif" width="500px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    Here are the scary results of warping my face into the shape of
+                    the average Danish male engineer and vice versa:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr>
+                      <th><img src="images/mine_to_average.jpg" width="300px"></th>
+                      <th><img src="images/average_to_mine.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    And here is an animation of me morphing into the average and then
+                    the average morphing in to me:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr>
+                      <th><img src="images/me_and_mean_danish.gif" width="500px"></th>
+                    </tr>
+                  </table>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+                  <a name="caricatures">
+                  <h2>Caricatures</h2>
+                  <hr>
+                  <p>
+                    In addition to interpolating to create new faces as we have been
+                    doing, we can also extrapolate. For example, I can create new versions
+                    of my face by extrapolating from the mean face that we have been working
+                    with. That is, instead of morphing my face to some points <u>between</u>
+                    the corresponding points on my face and the corresponding points on
+                    the average face, we can morph my face to some points <u>beyond</u> the
+                    corresponding points but along the correct direction.
+                  </p>
+                  <p>
+                    Recall that when calculating points in between the corresponding points, we
+                    used: alpha*points_1 + (1-alpha)*points_2 to get our points where
+                    alpha was between 0 and 1. In order to extrapolate, all we do is
+                    let alpha grow beyond 1.
+                  </p>
+                  <p>
+                    Here are the results:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>alpha = 0</th>
+                      <th>alpha = 0.25</th>
+                      <th>alpha = 0.5</th>
+                      <th>alpha = 0.75</th>
+                      <th>alpha = 1</th>
+                      <th>alpha = 1.25</th>
+                      <th>alpha = 1.50</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/caricatures/caricature_0.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_2.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_5.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_7.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_10.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_12.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_15.jpg" width="200px"></th>
+                    </tr>
+                  </table>
+
+                  <br><br>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>alpha = 0</th>
+                      <th>alpha = -0.25</th>
+                      <th>alpha = -0.5</th>
+                      <th>alpha = -0.75</th>
+                      <th>alpha = - 1</th>
+                      <th>alpha = -1.25</th>
+                      <th>alpha = -1.50</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/caricatures/caricature_0.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_-2.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_-5.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_-7.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_-10.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_-12.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_-15.jpg" width="200px"></th>
+                    </tr>
+                  </table>
+
+                  <p>
+                    Note that alpha can not grow infinitely large since the transformations
+                    of our triangulations will break down.
+                  </p>
+
+              </article>
+          </section>
+
+          <section>
+            <article class="article">
+              <a name="adjusting_features">
+              <h2>Adjusting Features</h2>
+              <hr>
+              <div style="padding-left: 15px">
+                <p>
+                  Notice in the extrapolation section above that as alpha grows
+                  in the positive direction, we begin to emphasize the features
+                  that make the Danish face distinct. Similarly, as alpha grows
+                  in the negative direction, we begin to emphasize the features
+                  that make my face distinct. This ability to selectively
+                  emphasize certain features allows us to change the attributes of
+                  a face to match those of another face type. For example, we can
+                  take my face, and make it look more feminine by looking at the
+                  average face of a Mexican woman.
+                </p>
+                <p>
+                  We will use the following image:
+                </p>
+                <table align="center" style="width: auto;">
+                  <tr style="text-align: center;">
+                    <th>Average Mexican Female</th>
+                  </tr>
+                  <tr>
+                    <th><img src="images/gender_change/imB.jpg" width="300px"></th>
+                  </tr>
+                </table>
+                <p>
+                  We can then morph the color, shape, or both:
+                </p>
+                <table align="center" style="width: auto;">
+                  <tr>
+                    <th>Original</th>
+                    <th><img src="images/gender_change/imA.jpg" width="300px"></th>
+                    <th><img src="images/gender_change/just_shape.jpg" width="300px"></th>
+                    <th>Just Shape</th>
+                  </tr>
+                  <tr>
+                    <th>Just Color</th>
+                    <th><img src="images/gender_change/just_color.jpg" width="300px"></th>
+                    <th><img src="images/gender_change/both.jpg" width="300px"></th>
+                    <th>Both</th>
+                  </tr>
+                </table>
+
+                <p>
+                  We can also do the same with ethnicity. We can use the following
+                  image as an example:
+                </p>
+                <table align="center" style="width: auto;">
+                  <tr style="text-align: center;">
+                    <th>Average African-American Male</th>
+                  </tr>
+                  <tr>
+                    <th><img src="images/ethnicity_change/imB.jpg" width="300px"></th>
+                  </tr>
+                </table>
+
+                <table align="center" style="width: auto;">
+                  <tr>
+                    <th>Original</th>
+                    <th><img src="images/ethnicity_change/imA.jpg" width="300px"></th>
+                    <th><img src="images/ethnicity_change/just_shape.jpg" width="300px"></th>
+                    <th>Just Shape</th>
+                  </tr>
+                  <tr>
+                    <th>Just Color</th>
+                    <th><img src="images/ethnicity_change/just_color.jpg" width="300px"></th>
+                    <th><img src="images/ethnicity_change/both.jpg" width="300px"></th>
+                    <th>Both</th>
+                  </tr>
+                </table>
+              </div>
+            </article>
+          </section>
+
+      </div>
+
+        <footer>
+            Gustavo Silva
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

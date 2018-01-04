@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A page about Gus Silva.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gus Silva</title>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue-pink.min.css" />
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+
+    <!-- Uses a header that contracts as the page scrolls down. -->
+    <style>
+        .mdl-navigation__link {
+            display: inline-block;
+            height: 60px;
+            line-height: 68px;
+            background-color: transparent !important;
+            border-bottom: 4px solid transparent;
+        }
+
+        .mdl-navigation__link:hover {
+            border-bottom: 4px solid #f50057;
+        }
+
+        .android-card-container .mdl-card__media {
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .android-card-container .mdl-card__media img {
+            width: 100%;
+        }
+
+        .android-card-container .mdl-card__title {
+            background: transparent;
+            height: auto;
+        }
+
+        .android-card-container .mdl-card__title-text {
+            color: black;
+            height: auto;
+        }
+
+        .android-card-container .mdl-card__supporting-text {
+            height: auto;
+            color: black;
+            padding-bottom: 48px;
+        }
+
+        .android-card-container .mdl-card__actions {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .android-card-container .mdl-card__actions a {
+            border-top: none;
+            line-height: 32px;
+            font-size: 16px;
+            float: right;
+            right: 10px;
+            color: #f50057;
+        }
+
+        h3 {
+            color: grey;
+            font-family: Roboto-light;
+            padding-left: 20px;
+        }
+
+        #email-fab {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+
+        svg {
+            width: 48px;
+            height: 32px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        svg:hover {
+            opacity: 1.0;
+        }
+
+        path {
+            fill: #ffffff;
+        }
+
+        .header-section {
+            position: relative;
+            height: 620px;
+            width: auto;
+            background-color: #aac7ff;
+            background: url('images/header_bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* NEW STUFF */
+        svg {
+            width: 48px;
+            height: 32px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        svg:hover {
+            opacity: 1.0;
+        }
+
+        path {
+            fill: #aaaaaa;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            width: auto;
+            text-align: left;
+            padding: 1em;
+        }
+
+        .profile-header {
+          display: inline-block;
+          *display: inline; /* IE7 fix for inline-block */
+          padding-top: 10%;
+          padding-bottom: 20%;
+        }
+
+        .header-title {
+            font-size: 16px;
+            font-family: Verdana;
+            color: black;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            font-family: Verdana;
+            color: grey;
+        }
+
+        .thin-divider {
+            background-color: #dddddd;
+            width: 100%;
+            height: 1px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 2px;
+            display: inline-block;
+            height: 300px;
+            margin: 1rem;
+            position: relative;
+            width: 300px;
+        }
+
+        .card-sidebar {
+            background: #fff;
+            border-radius: 10px;
+            display: inline-block;
+            height: 100%;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            padding-top: 1rem;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06), 0 10px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-1 {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .card-1:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .card-2 {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .card-3 {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .card-4 {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .card-5 {
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+        }
+    </style>
+</head>
+
+<body style="background-color: #DDDDDD">
+    <!-- FAB -->
+    <a id="email-fab" class="mdl-button mdl-js-button mdl-button--fab
+                mdl-button--raised mdl-js-ripple-effect
+                mdl-color--accent mdl-color-text--accent-contrast">
+        <i class="material-icons">person</i>
+    </a>
+    <!-- Right aligned menu on top of button  -->
+    <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" for="email-fab">
+        <li class="mdl-menu__item" onclick="location.href = 'https://www.linkedin.com/in/gusrsilva';">LinkedIn</li>
+        <li class="mdl-menu__item" onclick="location.href = 'https://plus.google.com/u/0/+GusSilvaBlockHead';">Google+</li>
+        <li class="mdl-menu__item" onclick="location.href = 'https://github.com/gusrsilva';">Github</li>
+        <li class="mdl-menu__item" onclick="location.href = 'mailto:gus7silva@yahoo.com';">E-mail</li>
+        <li class="mdl-menu__item" onclick="location.href = 'https://www.dropbox.com/s/q9qnay7109fob8p/Gustavo%20Silva%20Resume.pdf';">View Resume</li>
+    </ul>
+
+  <table style="width:100%; height: 94vh; padding: 3vh">
+  <tr>
+    <td width=18%>
+      <div class="card-sidebar">
+        <div class="profile-header">
+          <img src="images/header_avi.png" width="40%" height="auto"/>
+          <div class="header-title" style="padding-top: 5%">Gus Silva</div>
+          <div class="header-subtitle">Software Engineer, Wish</div>
+        </div>
+        <div class="thin-divider"></div>
+        <ul>
+          <li><div>
+            <!-- LinkedIn -->
+            <a id="linkedin_icon" href="https://www.linkedin.com/in/gusrsilva">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z"
+                />
+                </svg></a>
+            LinkedIn
+          </div></li>
+        </ul>
+
+    </td>
+    <td width=2%>
+    </td>
+    <td width=80%>
+      <div class="card-sidebar"></div>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <style>
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            text-align: center;
+            background: #2fd6bd;
+        }
+
+        .flex-container>* {
+            padding: 15px;
+            -webkit-flex: 1 100%;
+            flex: 1 100%;
+        }
+
+        .article {
+            text-align: left;
+        }
+        body {
+            margin: 0;
+            text-align: center;
+        }
+
+        .title {
+            padding: 10px;
+            background: #303F9F;
+            width: 100%;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-weight: 100;
+            font-size: 50px;
+        }
+
+        h2 {
+            color: #2fd6bd;
+            font-weight: 100;
+            font-size: 30px;
+        }
+
+        hr {
+            border-color: #2fd6bd;
+        }
+
+        html {
+            font-family: Futura, "Trebuchet MS", Roboto, sans-serif !important;
+            color: #333333
+        }
+
+        header {
+            background: #2fd6bd;
+            color: white;
+            width: 100%;
+        }
+
+        footer {
+            padding: 35px;
+            background: #2fd6bd;
+            color: white;
+        }
+
+        table {
+            border-radius: 20px;
+            padding: 10px;
+            padding-bottom: 20px;
+            background: #efefef;
+            width: auto;
+        }
+        .gray {
+            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+            filter: grayscale(100%);
+        }
+
+        .nav {
+            background: #eee;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav ul a {
+            text-decoration: none;
+        }
+
+        .floated_img {
+            float: left;
+            width: 100%;
+        }
+        img { transition: all .2s ease-in-out; }
+        img:hover { transform: scale(1.01); }
+
+        @media all and (min-width: 768px) {
+            .nav {
+                text-align: left;
+                -webkit-flex: 1 auto;
+                flex: 1 auto;
+                -webkit-order: 1;
+                order: 1;
+            }
+            .article {
+                -webkit-flex: 5 0px;
+                flex: 5 0px;
+                -webkit-order: 2;
+                order: 2;
+            }
+            footer {
+                -webkit-order: 3;
+                order: 3;
+            }
+        }
+
+        .inner {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .card {
+          background: #ffffff;
+          border-radius: 20px;
+          display: inline-block;
+          height: auto;
+          margin: 1rem;
+          position: relative;
+          width: auto;
+          box-shadow: 0 38px 76px rgba(0,0,0,0.30), 0 30px 24px rgba(0,0,0,0.22);
+          margin: 50px;
+          padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flex-container">
+        <header>
+            <h1>Gradient Domain Fusion</h1>
+            <table align="center" style="padding: 1px; border-radius: 0px;">
+              <tr>
+                <th><img src="images/skate_rope/target.jpg" width="300px"/></th>
+                <th><img src="images/skate_rope/rough.jpg" width="300px" /></th>
+                <th><img src="images/skate_rope/blended.jpg" width="300px" /></th>
+              </tr>
+            </table>
+            <h3>Gustavo Silva</h3>
+        </header>
+
+        <div class="card">
+          <section>
+              <article class="article">
+
+                  <h2>Overview</h2>
+                  <hr>
+                  <p>
+                    Blending two superimposed images can be done in many ways. As
+                    I have shown before, tricks such as alpha blending and
+                    multiresolution blending can be used to achieve this. Now I want
+                    to demonstrate a more powerful technique: Poisson Blending.
+                    While the previously two mentioned techniques work with the spatial
+                    domain and frequency domain respectively, Poisson blending deals
+                    with the gradient domain.
+                  </p>
+                  <p>
+                    Let's look at some results and see how it works...
+                  </p>
+
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+
+                  <h2>Toy Problem</h2>
+                  <hr>
+                  <p>
+                    As a simple warm up we first test gradient domain processing
+                    implementation on  a toy example. Using the given toy image,
+                    we set up and solve a least squares problem such that:
+                  </p>
+                  <ol>
+                    <li>
+                      The x and y gradients of our new image closely match those
+                      of the original.
+                    </li>
+                    <li>
+                      The top left corners of the two images should be the same color.
+                    </li>
+                  </ol>
+                  <p>
+                    Here is the result:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Original</th>
+                      <th>Solution</th>
+                      <th>Difference</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/toy_problem/toy_problem.png" width="200px"></th>
+                      <th><img src="images/toy_problem/recovered.jpg" width="200px"></th>
+                      <th><img src="images/toy_problem/difference.jpg" width="200px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    As you can see, the solution to the least squared problem is,
+                    correctly so, identical to the original. It only makes sense that
+                    the image with gradients closest to the original image and top
+                    left corner the same color as the original image is the orignal
+                    image itself.
+                  </p>
+                  <p>
+                    Let's dive deeper into the process and see the results on more
+                    interesting input images...
+                  </p>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+
+                  <h2>Poisson Blending</h2>
+                  <hr>
+                  <p>
+                    Let us call the image to be superimposed on to the other
+                    the source image. The image that the source will be overlayed on
+                    will be the target image. The idea is to find the right pixel values
+                    such that the gradients of the target and where the source will be
+                    are the most consistent. We can represent each pixel as a variable and
+                    the problem then boils down to solving a system of linear equations
+                    such that the gradients of the new pixels match the gradient of the
+                    original image. Of course there is not a perfect answer so we can instead
+                    set the problem up as a least squares problem. To illustrate the process
+                    more mathematically, we are trying to find the following:
+                  </p>
+                  <table align="center" style="width: auto; padding: 1px; background: #000000; border-radius: 0px;">
+                    <tr>
+                      <th><img src="images/poissonblend_eq.png" width="600px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    Where <strong>v</strong> is the pixel-vector representing the calculated values to
+                    use to represent the blended superimposed image, <strong>s</strong> is the pixel
+                    vector representing the source image, <strong>t</strong> is the pixel
+                    vector representing the target image, and N is the set of 4-neighbor pixels
+                    ( the pixels above, below, and on each side of v[i] ).
+                  </p>
+                  <p>
+                    Here is my favorite result:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th>Unblended</th>
+                      <th>Blended</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/skate_rope/source.jpg" width="300px"></th>
+                      <th><img src="images/skate_rope/target.jpg" width="300px"></th>
+                      <th><img src="images/skate_rope/rough.jpg" width="300px"></th>
+                      <th><img src="images/skate_rope/blended.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    And here are some more results...
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th>Unblended</th>
+                      <th>Blended</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/pool_shark/source.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/target.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/rough.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/blended.jpg" width="300px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/eye_palm/source.jpg" width="300px"></th>
+                      <th><img src="images/eye_palm/target.jpg" width="300px"></th>
+                      <th><img src="images/eye_palm/rough.jpg" width="300px"></th>
+                      <th><img src="images/eye_palm/blended.jpg" width="300px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/desert_puddle/source.jpg" width="300px"></th>
+                      <th><img src="images/desert_puddle/target.jpg" width="300px"></th>
+                      <th><img src="images/desert_puddle/rough.jpg" width="300px"></th>
+                      <th><img src="images/desert_puddle/blended.jpg" width="300px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/hikers_penguin1/source.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin1/target.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin1/rough.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin1/blended.jpg" width="300px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/hikers_penguin2/source.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin2/target.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin2/rough.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin2/blended.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    While the above results worked well for the most part, not all
+                    of the images I tried came out well. For example let's look at
+                    the following:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th>Unblended</th>
+                      <th>Blended</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/westbrook/source.jpg" width="300px"></th>
+                      <th><img src="images/westbrook/target.jpg" width="300px"></th>
+                      <th><img src="images/westbrook/rough.jpg" width="300px"></th>
+                      <th><img src="images/westbrook/blended.jpg" width="300px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/mona_graffiti/source.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/target.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/rough.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/blended.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    As you can see the results are not that great. The first image
+                    shows that poisson blending still has the
+                    drawback that nearly all blending techniques do in that the images
+                    must be carefully aligned before blending to prevent artifacts
+                    or irregularities that expose the blend. The second image shows
+                    another problem. In order for the image to look realistic,
+                    the texture from the bricks should still show through the mona
+                    lisa yet they do not. There is a variant technique that will
+                    fix this though...
+                  </p>
+
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+
+                  <h2>Mixed Gradients</h2>
+                  <hr>
+                  <p>
+                    Mixed Gradient blending is very similar to Possion blending with one
+                    small but important difference that is first best shown with the
+                    mathematical equation:
+                  </p>
+                  <table align="center" style="width: auto; padding: 1px; background: #000000; border-radius: 0px;">
+                    <tr>
+                      <th><img src="images/textureblend_eq.png" width="600px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    Note the difference. In the original equation we aimed
+                    to make our new images gradients closest to the source images
+                    gradients, except when on the border of the source image where we
+                    aimed to make the gradient of the new image and the target image
+                    closest to the gradient of the source image.
+                  </p>
+                  <p>
+                    With mixed gradient blending, however, instead of always comparing
+                    to the source image gradient, we compare to d[i,j], which is defined
+                    as the value of the gradient from the source image or the target image,
+                    whichever has the larger magnitude.
+                  </p>
+                  <p>
+                    Let's see some results:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th>Unblended</th>
+                      <th>Blended</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/mona_graffiti/source.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/target.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/rough.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/mixed_blended.jpg" width="300px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/einstein_quote/source.jpg" width="300px"></th>
+                      <th><img src="images/einstein_quote/target.jpg" width="300px"></th>
+                      <th><img src="images/einstein_quote/rough.jpg" width="300px"></th>
+                      <th><img src="images/einstein_quote/blended.jpg" width="300px"></th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/graffiti/source.jpg" width="300px"></th>
+                      <th><img src="images/graffiti/target.jpg" width="300px"></th>
+                      <th><img src="images/graffiti/rough.jpg" width="300px"></th>
+                      <th><img src="images/graffiti/mixed_blended.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+
+                  <h2> Comparing the Different Blending Techniques</h2>
+                  <hr>
+                  <p>
+                    We have now dealt with a range of blending techniques. Let's
+                    see how they all compare:
+                  </p>
+                  <p>
+                    Here is the image we will use to compare:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th>Unblended</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/pool_shark/source.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/target.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/rough.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    <br>
+                    And here are the results from the three different blending
+                    techinques:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th><br></th>
+                    </tr>
+                    <tr style="text-align: center;">
+                      <th>Multiresolution (Laplacian)</th>
+                      <th>Mixed-Gradient</th>
+                      <th>Poisson</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/pool_shark/frequency_blended.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/mixed_blended.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/blended.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+                  <p>
+                    In this case, and it may not always be the case, Poisson blending
+                    seems to be the top performer.
+                  </p>
+                  <p>
+                    The multiresolution blending does a good job of hiding the
+                    sharp edge between the two images that can be seen in the
+                    unblended image. However, multiresolution blending can do
+                    nothing about the color of the images, so the color difference
+                    between the water from the pool and the ocean remains and this
+                    creates an undesirable image.
+                  </p>
+                  <p>
+                    The mixed-gradient blending does a better job matching the colors
+                    of the waters. However, as you can see, the shark becomes
+                    unrealistically transparent. This is due to the nature of how
+                    we calculate the mixed-gradient pixels. Recall that we used the
+                    gradient from the source image or target image that was larger
+                    in magnitude. Notice that the ripples in the water of the target
+                    image form sharp edges. These will result in many large magnitude
+                    gradients and so we more often attempt to make our shark blend
+                    in with the target image, resulting in the alpha effect.
+                  </p>
+                  <p>
+                    This is why, in this case, the Poisson seems to be the best
+                    happy medium. The Poisson blending does a great job of matching
+                    the water colors, and while this does cause the sharks color
+                    to be changed as well, it is not changed so much that is is
+                    transparent and unrealistic.
+                  </p>
+                  <p>
+                    I suppose each method has its strengths and ideal conditions
+                    however, and so there is no one method that always produces
+                    better results for every pair of images.
+                  </p>
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+
+                  <h2>Bells and Whistles</h2>
+                  <hr>
+                  <h3>Color2Gray</h3>
+                  <p>
+                    When converting color images to grayscale using standard techniques
+                    such as the rgb2gray function does, you may lose some important
+                    information that was encoded in the colors. Perhaps now, equipped
+                    with the power of gradient domain processing, we can do better.
+                  </p>
+                  <p>
+                    What we want is a grayscale image that has similar contrast to
+                    its color counter part. Achieving this with poisson blending is
+                    quite simple.
+                  </p>
+                  <ol>
+                    <li>
+                      We first convert the image to the HSV coordinate system. Recall
+                      that HSV encodes images in terms of Hue, Saturation, and Value.
+                      In this coordinate system we can immediately examine an images
+                      color, the intensity of that color, and the brightness.
+                    </li>
+                    <li>
+                      We then use Poisson blending to "blend" the H and V channels
+                      of the image. This essentially takes the image representing
+                      brightnesses, which is similar to the rgb2gray version, and
+                      tweaks the gradients so they match the gradients of the hue
+                      channel. The result is a grayscale image that experiences change
+                      whenever there is a color change in the original image.
+                    </li>
+                  </ol>
+                  <p>
+                    From this we get a much more informative grayscale image, as
+                    shown below:
+                  </p>
+                  <table align="center" style="width: auto;">
+                    <tr style="text-align: center;">
+                      <th>Original</th>
+                      <th>Using rgb2gray</th>
+                      <th>Using gradient domain processing</th>
+                    </tr>
+                    <tr>
+                      <th><img src="images/color_blind/original.png" width="300px"></th>
+                      <th><img src="images/color_blind/rgb2gray.jpg" width="300px"></th>
+                      <th><img src="images/color_blind/color2gray.jpg" width="300px"></th>
+                    </tr>
+                  </table>
+
+              </article>
+          </section>
+
+          <section>
+              <article class="article">
+
+                  <h2>Comments</h2>
+                  <hr>
+                  <p>
+                    Working in the gradient domain provides a lot of new and useful
+                    insight about image manipulation. It is interesting to see how local
+                    changes in the gradient domain can have widespread changes outside
+                    of it. With each new trick we learn it becomes more and more exciting
+                    to find new images and ways of applying our skills. Unfortunately, my
+                    artistry lags behind and I have trouble finding good images to demonstrate
+                    the newly learned skills on.
+                  </p>
+              </article>
+          </section>
+
+        </div>
+
+
+
+        <footer>
+            Gustavo Silva - August 2016
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
