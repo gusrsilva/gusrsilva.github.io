@@ -72,6 +72,7 @@
             padding-bottom: 20px;
             background: #efefef;
             width: auto;
+            table-layout: fixed;
         }
         .gray {
             -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
@@ -95,7 +96,10 @@
             float: left;
             width: 100%;
         }
-        img { transition: all .2s ease-in-out; }
+        img {
+          transition: all .2s ease-in-out;
+          width: 100%;
+        }
         img:hover { transform: scale(1.01); }
 
         @media all and (min-width: 768px) {
@@ -146,7 +150,7 @@
             <h1>Low Poly Art </h1>
             <table align="center" style="padding: 1px; border-radius: 0px;">
               <tr>
-                <th><img src="images/poly_art/header.png" width="240px"/></th>
+                <th><img src="images/poly_art/header.png" style="max-width: 240px"/></th>
               </tr>
             </table>
             <h3>Gustavo Silva</h3>
@@ -187,8 +191,8 @@
                       <th colspan="2">Triangulations Example</th>
                     </tr>
                     <tr>
-                      <th><img src="images/imA_triangulation.png" width="300px"></th>
-                      <th><img src="images/imB_triangulation.png" width="300px"></th>
+                      <th><img src="images/imA_triangulation.png" style="max-width: 300px"></th>
+                      <th><img src="images/imB_triangulation.png" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -210,20 +214,20 @@
                 <div style="padding-left: 15px">
                   <table align="center" style="width: auto;">
                     <tr>
-                      <th><img src="images/imA.jpg" width="500px"></th>
-                      <th><img src="images/poly_art/poly_me.jpg" width="500px"></th>
+                      <th><img src="images/imA.jpg" style="max-width: 500px"></th>
+                      <th><img src="images/poly_art/poly_me.jpg" style="max-width: 500px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/imB.jpg" width="500px"></th>
-                      <th><img src="images/poly_art/poly_obama.jpg" width="500px"></th>
+                      <th><img src="images/imB.jpg" style="max-width: 500px"></th>
+                      <th><img src="images/poly_art/poly_obama.jpg" style="max-width: 500px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/poly_art/bentley.jpg" width="500px"></th>
-                      <th><img src="images/poly_art/poly_bentley.jpg" width="500px"></th>
+                      <th><img src="images/poly_art/bentley.jpg" style="max-width: 500px"></th>
+                      <th><img src="images/poly_art/poly_bentley.jpg" style="max-width: 500px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/poly_art/hawaii.jpg" width="500px"></th>
-                      <th><img src="images/poly_art/poly_hawaii.jpg" width="500px"></th>
+                      <th><img src="images/poly_art/hawaii.jpg" style="max-width: 500px"></th>
+                      <th><img src="images/poly_art/poly_hawaii.jpg" style="max-width: 500px"></th>
                     </tr>
                   </table>
                 </div>
