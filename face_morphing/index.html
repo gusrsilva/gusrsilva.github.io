@@ -72,6 +72,7 @@
             padding-bottom: 20px;
             background: #efefef;
             width: auto;
+            table-layout: fixed;
         }
         .gray {
             -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
@@ -95,7 +96,10 @@
             float: left;
             width: 100%;
         }
-        img { transition: all .2s ease-in-out; }
+        img {
+          transition: all .2s ease-in-out;
+          width: 100%;
+        }
         img:hover { transform: scale(1.01); }
 
         @media all and (min-width: 768px) {
@@ -143,13 +147,13 @@
     <div class="flex-container">
         <header>
             <h1>Face Morphing </h1>
-            <table align="center" style="padding: 1px; border-radius: 0px;">
+            <table align="center" style="padding: 1px; border-radius: 0px; width: 50%">
               <tr>
-                <th><img src="images/header1.jpg" width="120px"/></th>
-                <th><img src="images/header2.jpg" width="120px"/></th>
-                <th><img src="images/header3.jpg" width="120px"/></th>
-                <th><img src="images/header4.jpg" width="120px"/></th>
-                <th><img src="images/header5.jpg" width="120px"/></th>
+                <th><img src="images/header1.jpg" width="100%"/></th>
+                <th><img src="images/header2.jpg" width="100%"/></th>
+                <th><img src="images/header3.jpg" width="100%"/></th>
+                <th><img src="images/header4.jpg" width="100%"/></th>
+                <th><img src="images/header5.jpg" width="100%"/></th>
               </tr>
             </table>
             <h3>Gustavo Silva</h3>
@@ -207,8 +211,8 @@
                       <th colspan="2">Triangulations Example</th>
                     </tr>
                     <tr>
-                      <th><img src="images/imA_triangulation.png" width="300px"></th>
-                      <th><img src="images/imB_triangulation.png" width="300px"></th>
+                      <th><img src="images/imA_triangulation.png" style="max-width: 300px"></th>
+                      <th><img src="images/imB_triangulation.png" style="max-width: 300px"></th>
                     </tr>
                   </table>
               </article>
@@ -260,8 +264,8 @@
                         <th>Inverse Warping</th>
                       </tr>
                       <tr>
-                        <th><img src="images/forward_warping.png" width="300px"></th>
-                        <th><img src="images/inverse_warping.jpg" width="300px"></th>
+                        <th><img src="images/forward_warping.png" style="max-width: 300px"></th>
+                        <th><img src="images/inverse_warping.jpg" style="max-width: 300px"></th>
                       </tr>
                     </table>
                   </p>
@@ -276,16 +280,16 @@
                   <p>
                     Here are the results of finding the midway face:
                   </p>
-                  <table align="center" style="width: auto;">
+                  <table align="center" style="width: 80%;">
                     <tr style="text-align: center;">
                       <th>Face 1</th>
                       <th>Face 2</th>
                       <th>Midway Face</th>
                     </tr>
                     <tr>
-                      <th><img src="images/imA.jpg" width="300px"></th>
-                      <th><img src="images/imB.jpg" width="300px"></th>
-                      <th><img src="images/midway_face.jpg" width="300px"></th>
+                      <th><img src="images/imA.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/imB.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/midway_face.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
               </article>
@@ -314,16 +318,16 @@
                   <p>
                     Here is the final result:
                   </p>
-                  <table align="center" style="width: auto;">
+                  <table align="center" style="width: 80%;">
                     <tr style="text-align: center;">
                       <th>Face 1</th>
                       <th>Face 2</th>
                       <th>Morph Animation</th>
                     </tr>
                     <tr>
-                      <th><img src="images/imA.jpg" width="300px"></th>
-                      <th><img src="images/imB.jpg" width="300px"></th>
-                      <th><img src="images/me_to_obama.gif" width="300px"></th>
+                      <th><img src="images/imA.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/imB.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/me_to_obama.gif" style="max-width: 300px"></th>
                     </tr>
                   </table>
               </article>
@@ -349,7 +353,7 @@
                       <th>Danish Engineers</th>
                     </tr>
                     <tr>
-                      <th><img src="images/danish_engineers.png" width="500px"></th>
+                      <th><img src="images/danish_engineers.png" style="max-width: 500px"></th>
                     </tr>
                   </table>
                   <p>
@@ -370,9 +374,9 @@
                   </p>
                   <table align="center" style="width: auto;">
                     <tr>
-                      <th><img src="images/morphed_to_average1.jpg" width="300px"></th>
-                      <th><img src="images/morphed_to_average2.jpg" width="300px"></th>
-                      <th><img src="images/morphed_to_average3.jpg" width="300px"></th>
+                      <th><img src="images/morphed_to_average1.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/morphed_to_average2.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/morphed_to_average3.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -383,7 +387,7 @@
                       <th>The Average Male Danish Engineer</th>
                     </tr>
                     <tr>
-                      <th><img src="images/mean_face.jpg" width="500px"></th>
+                      <th><img src="images/mean_face.jpg" style="max-width: 500px"></th>
                     </tr>
                   </table>
                   <p>
@@ -391,7 +395,7 @@
                   </p>
                   <table align="center" style="width: auto;">
                     <tr>
-                      <th><img src="images/engineers_to_average.gif" width="500px"></th>
+                      <th><img src="images/engineers_to_average.gif" style="max-width: 500px"></th>
                     </tr>
                   </table>
                   <p>
@@ -400,8 +404,8 @@
                   </p>
                   <table align="center" style="width: auto;">
                     <tr>
-                      <th><img src="images/mine_to_average.jpg" width="300px"></th>
-                      <th><img src="images/average_to_mine.jpg" width="300px"></th>
+                      <th><img src="images/mine_to_average.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/average_to_mine.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -410,7 +414,7 @@
                   </p>
                   <table align="center" style="width: auto;">
                     <tr>
-                      <th><img src="images/me_and_mean_danish.gif" width="500px"></th>
+                      <th><img src="images/me_and_mean_danish.gif" style="max-width: 500px"></th>
                     </tr>
                   </table>
               </article>
@@ -450,13 +454,13 @@
                       <th>alpha = 1.50</th>
                     </tr>
                     <tr>
-                      <th><img src="images/caricatures/caricature_0.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_2.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_5.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_7.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_10.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_12.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_15.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_0.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_2.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_5.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_7.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_10.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_12.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_15.jpg" style="max-width: 200px"></th>
                     </tr>
                   </table>
 
@@ -472,13 +476,13 @@
                       <th>alpha = -1.50</th>
                     </tr>
                     <tr>
-                      <th><img src="images/caricatures/caricature_0.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_-2.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_-5.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_-7.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_-10.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_-12.jpg" width="200px"></th>
-                      <th><img src="images/caricatures/caricature_-15.jpg" width="200px"></th>
+                      <th><img src="images/caricatures/caricature_0.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_-2.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_-5.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_-7.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_-10.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_-12.jpg" style="max-width: 200px"></th>
+                      <th><img src="images/caricatures/caricature_-15.jpg" style="max-width: 200px"></th>
                     </tr>
                   </table>
 
@@ -515,7 +519,7 @@
                     <th>Average Mexican Female</th>
                   </tr>
                   <tr>
-                    <th><img src="images/gender_change/imB.jpg" width="300px"></th>
+                    <th><img src="images/gender_change/imB.jpg" style="max-width: 300px"></th>
                   </tr>
                 </table>
                 <p>
@@ -524,14 +528,14 @@
                 <table align="center" style="width: auto;">
                   <tr>
                     <th>Original</th>
-                    <th><img src="images/gender_change/imA.jpg" width="300px"></th>
-                    <th><img src="images/gender_change/just_shape.jpg" width="300px"></th>
+                    <th><img src="images/gender_change/imA.jpg" style="max-width: 300px"></th>
+                    <th><img src="images/gender_change/just_shape.jpg" style="max-width: 300px"></th>
                     <th>Just Shape</th>
                   </tr>
                   <tr>
                     <th>Just Color</th>
-                    <th><img src="images/gender_change/just_color.jpg" width="300px"></th>
-                    <th><img src="images/gender_change/both.jpg" width="300px"></th>
+                    <th><img src="images/gender_change/just_color.jpg" style="max-width: 300px"></th>
+                    <th><img src="images/gender_change/both.jpg" style="max-width: 300px"></th>
                     <th>Both</th>
                   </tr>
                 </table>
@@ -545,21 +549,21 @@
                     <th>Average African-American Male</th>
                   </tr>
                   <tr>
-                    <th><img src="images/ethnicity_change/imB.jpg" width="300px"></th>
+                    <th><img src="images/ethnicity_change/imB.jpg" style="max-width: 300px"></th>
                   </tr>
                 </table>
 
                 <table align="center" style="width: auto;">
                   <tr>
                     <th>Original</th>
-                    <th><img src="images/ethnicity_change/imA.jpg" width="300px"></th>
-                    <th><img src="images/ethnicity_change/just_shape.jpg" width="300px"></th>
+                    <th><img src="images/ethnicity_change/imA.jpg" style="max-width: 300px"></th>
+                    <th><img src="images/ethnicity_change/just_shape.jpg" style="max-width: 300px"></th>
                     <th>Just Shape</th>
                   </tr>
                   <tr>
                     <th>Just Color</th>
-                    <th><img src="images/ethnicity_change/just_color.jpg" width="300px"></th>
-                    <th><img src="images/ethnicity_change/both.jpg" width="300px"></th>
+                    <th><img src="images/ethnicity_change/just_color.jpg" style="max-width: 300px"></th>
+                    <th><img src="images/ethnicity_change/both.jpg" style="max-width: 300px"></th>
                     <th>Both</th>
                   </tr>
                 </table>
