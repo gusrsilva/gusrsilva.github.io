@@ -72,6 +72,7 @@
             padding-bottom: 20px;
             background: #efefef;
             width: auto;
+            table-layout: fixed;
         }
         .gray {
             -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
@@ -95,7 +96,12 @@
             float: left;
             width: 100%;
         }
-        img { transition: all .2s ease-in-out; }
+
+        img {
+          transition: all .2s ease-in-out;
+          width: 100%;
+        }
+
         img:hover { transform: scale(1.01); }
 
         @media all and (min-width: 768px) {
@@ -143,11 +149,11 @@
     <div class="flex-container">
         <header>
             <h1>Gradient Domain Fusion</h1>
-            <table align="center" style="padding: 1px; border-radius: 0px;">
+            <table align="center" style="padding: 1px; border-radius: 0px; width: 75%; max-width: 900px">
               <tr>
-                <th><img src="images/skate_rope/target.jpg" width="300px"/></th>
-                <th><img src="images/skate_rope/rough.jpg" width="300px" /></th>
-                <th><img src="images/skate_rope/blended.jpg" width="300px" /></th>
+                <th><img src="images/skate_rope/target.jpg" style="max-width: 300px"/></th>
+                <th><img src="images/skate_rope/rough.jpg" style="max-width: 300px" /></th>
+                <th><img src="images/skate_rope/blended.jpg" style="max-width: 300px" /></th>
               </tr>
             </table>
             <h3>Gustavo Silva</h3>
@@ -204,9 +210,9 @@
                       <th>Difference</th>
                     </tr>
                     <tr>
-                      <th><img src="images/toy_problem/toy_problem.png" width="200px"></th>
-                      <th><img src="images/toy_problem/recovered.jpg" width="200px"></th>
-                      <th><img src="images/toy_problem/difference.jpg" width="200px"></th>
+                      <th><img src="images/toy_problem/toy_problem.png" style="max-width: 300px"></th>
+                      <th><img src="images/toy_problem/recovered.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/toy_problem/difference.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -242,7 +248,7 @@
                   </p>
                   <table align="center" style="width: auto; padding: 1px; background: #000000; border-radius: 0px;">
                     <tr>
-                      <th><img src="images/poissonblend_eq.png" width="600px"></th>
+                      <th><img src="images/poissonblend_eq.png" style="max-width: 600px"></th>
                     </tr>
                   </table>
                   <p>
@@ -263,10 +269,10 @@
                       <th>Blended</th>
                     </tr>
                     <tr>
-                      <th><img src="images/skate_rope/source.jpg" width="300px"></th>
-                      <th><img src="images/skate_rope/target.jpg" width="300px"></th>
-                      <th><img src="images/skate_rope/rough.jpg" width="300px"></th>
-                      <th><img src="images/skate_rope/blended.jpg" width="300px"></th>
+                      <th><img src="images/skate_rope/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/skate_rope/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/skate_rope/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/skate_rope/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -280,34 +286,34 @@
                       <th>Blended</th>
                     </tr>
                     <tr>
-                      <th><img src="images/pool_shark/source.jpg" width="300px"></th>
-                      <th><img src="images/pool_shark/target.jpg" width="300px"></th>
-                      <th><img src="images/pool_shark/rough.jpg" width="300px"></th>
-                      <th><img src="images/pool_shark/blended.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/pool_shark/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/pool_shark/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/pool_shark/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/eye_palm/source.jpg" width="300px"></th>
-                      <th><img src="images/eye_palm/target.jpg" width="300px"></th>
-                      <th><img src="images/eye_palm/rough.jpg" width="300px"></th>
-                      <th><img src="images/eye_palm/blended.jpg" width="300px"></th>
+                      <th><img src="images/eye_palm/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/eye_palm/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/eye_palm/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/eye_palm/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/desert_puddle/source.jpg" width="300px"></th>
-                      <th><img src="images/desert_puddle/target.jpg" width="300px"></th>
-                      <th><img src="images/desert_puddle/rough.jpg" width="300px"></th>
-                      <th><img src="images/desert_puddle/blended.jpg" width="300px"></th>
+                      <th><img src="images/desert_puddle/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/desert_puddle/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/desert_puddle/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/desert_puddle/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/hikers_penguin1/source.jpg" width="300px"></th>
-                      <th><img src="images/hikers_penguin1/target.jpg" width="300px"></th>
-                      <th><img src="images/hikers_penguin1/rough.jpg" width="300px"></th>
-                      <th><img src="images/hikers_penguin1/blended.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin1/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/hikers_penguin1/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/hikers_penguin1/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/hikers_penguin1/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/hikers_penguin2/source.jpg" width="300px"></th>
-                      <th><img src="images/hikers_penguin2/target.jpg" width="300px"></th>
-                      <th><img src="images/hikers_penguin2/rough.jpg" width="300px"></th>
-                      <th><img src="images/hikers_penguin2/blended.jpg" width="300px"></th>
+                      <th><img src="images/hikers_penguin2/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/hikers_penguin2/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/hikers_penguin2/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/hikers_penguin2/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -323,16 +329,16 @@
                       <th>Blended</th>
                     </tr>
                     <tr>
-                      <th><img src="images/westbrook/source.jpg" width="300px"></th>
-                      <th><img src="images/westbrook/target.jpg" width="300px"></th>
-                      <th><img src="images/westbrook/rough.jpg" width="300px"></th>
-                      <th><img src="images/westbrook/blended.jpg" width="300px"></th>
+                      <th><img src="images/westbrook/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/westbrook/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/westbrook/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/westbrook/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/mona_graffiti/source.jpg" width="300px"></th>
-                      <th><img src="images/mona_graffiti/target.jpg" width="300px"></th>
-                      <th><img src="images/mona_graffiti/rough.jpg" width="300px"></th>
-                      <th><img src="images/mona_graffiti/blended.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/mona_graffiti/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/mona_graffiti/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/mona_graffiti/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -389,22 +395,22 @@
                       <th>Blended</th>
                     </tr>
                     <tr>
-                      <th><img src="images/mona_graffiti/source.jpg" width="300px"></th>
-                      <th><img src="images/mona_graffiti/target.jpg" width="300px"></th>
-                      <th><img src="images/mona_graffiti/rough.jpg" width="300px"></th>
-                      <th><img src="images/mona_graffiti/mixed_blended.jpg" width="300px"></th>
+                      <th><img src="images/mona_graffiti/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/mona_graffiti/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/mona_graffiti/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/mona_graffiti/mixed_blended.jpg" style="max-width: 300px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/einstein_quote/source.jpg" width="300px"></th>
-                      <th><img src="images/einstein_quote/target.jpg" width="300px"></th>
-                      <th><img src="images/einstein_quote/rough.jpg" width="300px"></th>
-                      <th><img src="images/einstein_quote/blended.jpg" width="300px"></th>
+                      <th><img src="images/einstein_quote/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/einstein_quote/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/einstein_quote/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/einstein_quote/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                     <tr>
-                      <th><img src="images/graffiti/source.jpg" width="300px"></th>
-                      <th><img src="images/graffiti/target.jpg" width="300px"></th>
-                      <th><img src="images/graffiti/rough.jpg" width="300px"></th>
-                      <th><img src="images/graffiti/mixed_blended.jpg" width="300px"></th>
+                      <th><img src="images/graffiti/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/graffiti/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/graffiti/rough.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/graffiti/mixed_blended.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
               </article>
@@ -429,9 +435,9 @@
                       <th>Unblended</th>
                     </tr>
                     <tr>
-                      <th><img src="images/pool_shark/source.jpg" width="300px"></th>
-                      <th><img src="images/pool_shark/target.jpg" width="300px"></th>
-                      <th><img src="images/pool_shark/rough.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/source.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/pool_shark/target.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/pool_shark/rough.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -449,9 +455,9 @@
                       <th>Poisson</th>
                     </tr>
                     <tr>
-                      <th><img src="images/pool_shark/frequency_blended.jpg" width="300px"></th>
-                      <th><img src="images/pool_shark/mixed_blended.jpg" width="300px"></th>
-                      <th><img src="images/pool_shark/blended.jpg" width="300px"></th>
+                      <th><img src="images/pool_shark/frequency_blended.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/pool_shark/mixed_blended.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/pool_shark/blended.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
                   <p>
@@ -495,9 +501,8 @@
           <section>
               <article class="article">
 
-                  <h2>Bells and Whistles</h2>
+                  <h2>Color2Gray</h2>
                   <hr>
-                  <h3>Color2Gray</h3>
                   <p>
                     When converting color images to grayscale using standard techniques
                     such as the rgb2gray function does, you may lose some important
@@ -536,32 +541,14 @@
                       <th>Using gradient domain processing</th>
                     </tr>
                     <tr>
-                      <th><img src="images/color_blind/original.png" width="300px"></th>
-                      <th><img src="images/color_blind/rgb2gray.jpg" width="300px"></th>
-                      <th><img src="images/color_blind/color2gray.jpg" width="300px"></th>
+                      <th><img src="images/color_blind/original.png" style="max-width: 300px"></th>
+                      <th><img src="images/color_blind/rgb2gray.jpg" style="max-width: 300px"></th>
+                      <th><img src="images/color_blind/color2gray.jpg" style="max-width: 300px"></th>
                     </tr>
                   </table>
 
               </article>
           </section>
-
-          <section>
-              <article class="article">
-
-                  <h2>Comments</h2>
-                  <hr>
-                  <p>
-                    Working in the gradient domain provides a lot of new and useful
-                    insight about image manipulation. It is interesting to see how local
-                    changes in the gradient domain can have widespread changes outside
-                    of it. With each new trick we learn it becomes more and more exciting
-                    to find new images and ways of applying our skills. Unfortunately, my
-                    artistry lags behind and I have trouble finding good images to demonstrate
-                    the newly learned skills on.
-                  </p>
-              </article>
-          </section>
-
         </div>
 
 
