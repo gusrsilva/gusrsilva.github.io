@@ -2,32 +2,41 @@
 <html lang="en">
 
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143359267-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-143359267-1');
+	</script>
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
 
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A page about Gus Silva.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gus Silva</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="A page about Gus Silva.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gus Silva</title>
 
-    <!-- Page styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="material.min.css" />
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	<!-- Page styles -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="material.min.css" />
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 
-    <!-- Uses a header that contracts as the page scrolls down. -->
-    <style>
-
-		.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
-		  padding-right: 0;
-		  color: #000000;
+	<!-- Uses a header that contracts as the page scrolls down. -->
+	<style>
+		.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
+			padding-right: 0;
+			color: #000000;
 		}
 
-		.mdl-layout__header{
-		    margin: 0;
-		    padding: 0;
-		    background: #ffffff;
+		.mdl-layout__header {
+			margin: 0;
+			padding: 0;
+			background: #ffffff;
 			background-color: #ffffff;
 			color: #000000;
 		}
@@ -42,648 +51,632 @@
 			padding-bottom: 24px;
 		}
 
-        .mdl-navigation__link {
-            display: inline-block;
-            height: 60px;
-            line-height: 68px;
-            background-color: transparent !important;
-            border-bottom: 4px solid transparent;
+		.mdl-navigation__link {
+			display: inline-block;
+			height: 60px;
+			line-height: 68px;
+			background-color: transparent !important;
+			border-bottom: 4px solid transparent;
 			text-transform: uppercase;
 			letter-spacing: 0.1em;
 			font-size: 12px;
-        }
+		}
 
 		.mdl-layout__header-row .mdl-navigation__link {
 			color: #000000;
 		}
 
-        .mdl-navigation__link:hover {
+		.mdl-navigation__link:hover {
 			color: #27e3ca;
-            border-bottom: 4px solid #27e3ca;
-        }
+			border-bottom: 4px solid #27e3ca;
+		}
 
-        .android-card-container .mdl-card__media {
-            overflow: hidden;
-            background: transparent;
-        }
+		.android-card-container .mdl-card__media {
+			overflow: hidden;
+			background: transparent;
+		}
 
-        .android-card-container .mdl-card__media img {
-            width: 100%;
-        }
+		.android-card-container .mdl-card__media img {
+			width: 100%;
+		}
 
-        .android-card-container .mdl-card__title {
-            background: transparent;
-            height: auto;
-        }
+		.android-card-container .mdl-card__title {
+			background: transparent;
+			height: auto;
+		}
 
-        .android-card-container .mdl-card__title-text {
-            color: black;
-            height: auto;
-        }
+		.android-card-container .mdl-card__title-text {
+			color: black;
+			height: auto;
+		}
 
-        .android-card-container .mdl-card__supporting-text {
-            height: auto;
-            color: black;
-            padding-bottom: 48px;
-        }
+		.android-card-container .mdl-card__supporting-text {
+			height: auto;
+			color: black;
+			padding-bottom: 48px;
+		}
 
-        .android-card-container .mdl-card__actions {
-            position: absolute;
-            bottom: 0;
-        }
+		.android-card-container .mdl-card__actions {
+			position: absolute;
+			bottom: 0;
+		}
 
-        .android-card-container .mdl-card__actions a {
-            border-top: none;
-            line-height: 32px;
-            font-size: 16px;
-            float: right;
-            right: 10px;
-            color: #1ebaa5;
-        }
+		.android-card-container .mdl-card__actions a {
+			border-top: none;
+			line-height: 32px;
+			font-size: 16px;
+			float: right;
+			right: 10px;
+			color: #1ebaa5;
+		}
 
-		.mdl-card:hover{
+		.mdl-card:hover {
 			-webkit-transition: all .1s ease-out;
 			-moz-transition: all .1s ease-out;
 			-ms-transition: all .1s ease-out;
 			-o-transition: all .1s ease-out;
 			transition: all .1s ease-out;
 			transform: scale(1.02);
-			-ms-transform: scale(1.02); /* IE 9 */
-			-webkit-transform: scale(1.02); /* Safari and Chrome */
+			-ms-transform: scale(1.02);
+			/* IE 9 */
+			-webkit-transform: scale(1.02);
+			/* Safari and Chrome */
 		}
 
-        .header-section {
-            position: relative;
-            height: auto;
-            width: auto;
-            background-color: #efefef;
-            background-size: cover;
-        }
+		.header-section {
+			position: relative;
+			height: auto;
+			width: auto;
+			background-color: #efefef;
+			background-size: cover;
+		}
 
-        .header-title {
+		.header-title {
 			height: 40px;
-            font-size: 18px;
+			font-size: 18px;
 			font-weight: lighter;
-            padding-top: 24px;
+			padding-top: 24px;
 			padding-left: 16px;
 			letter-spacing: 0.1em;
 			text-transform: uppercase;
-        }
+		}
 
-        .header-subtitle {
-            font-size: 16px;
-            font-weight: lighter;
-            padding-top: 8px;
-			color: #aaaaaa;
-        }
-
-        h3 {
+		.header-subtitle {
+			font-size: 16px;
 			font-weight: lighter;
-            color: #aaaaaa;
-            padding-left: 20px;
-        }
+			padding-top: 8px;
+			color: #aaaaaa;
+		}
 
-        #email-fab {
-            position: fixed;
-            display: block;
-            right: 0;
-            bottom: 0;
-            margin-right: 40px;
-            margin-bottom: 40px;
-            z-index: 900;
-        }
+		h3 {
+			font-weight: lighter;
+			color: #aaaaaa;
+			padding-left: 20px;
+		}
 
-        svg {
-            width: 24px;
-            height: 24px;
-            opacity: 0.5;
-            transition: opacity 0.3s;
+		#email-fab {
+			position: fixed;
+			display: block;
+			right: 0;
+			bottom: 0;
+			margin-right: 40px;
+			margin-bottom: 40px;
+			z-index: 900;
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+			opacity: 0.5;
+			transition: opacity 0.3s;
 			margin-right: 8px;
 			margin-top: 8px;
-        }
+		}
 
-        svg:hover {
-            opacity: 1.0;
+		svg:hover {
+			opacity: 1.0;
 			-webkit-transition: all .1s ease-out;
 			-moz-transition: all .1s ease-out;
 			-ms-transition: all .1s ease-out;
 			-o-transition: all .1s ease-out;
 			transition: all .1s ease-out;
 			transform: scale(1.2);
-			-ms-transform: scale(1.2); /* IE 9 */
-			-webkit-transform: scale(1.2); /* Safari and Chrome */
-        }
+			-ms-transform: scale(1.2);
+			/* IE 9 */
+			-webkit-transform: scale(1.2);
+			/* Safari and Chrome */
+		}
 
-		svg:hover > path {
+		svg:hover>path {
 			fill: #27e3ca;
 		}
 
-        path {
-            fill: #aaaaaa;
-        }
-    </style>
+		path {
+			fill: #aaaaaa;
+		}
+	</style>
 </head>
 
 <body>
-    <!-- FAB -->
-    <a id="email-fab" class="mdl-button mdl-js-button mdl-button--fab
+	<!-- FAB -->
+	<a id="email-fab" class="mdl-button mdl-js-button mdl-button--fab
                 mdl-button--raised mdl-js-ripple-effect
                 mdl-color--accent mdl-color-text--accent-contrast">
         <i class="material-icons">person</i>
     </a>
-    <!-- Right aligned menu on top of button  -->
-    <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" for="email-fab">
-        <li class="mdl-menu__item" onclick="location.href = 'https://www.linkedin.com/in/gusrsilva';">LinkedIn</li>
-        <li class="mdl-menu__item" onclick="location.href = 'https://plus.google.com/u/0/+GusSilvaBlockHead';">Google+</li>
-        <li class="mdl-menu__item" onclick="location.href = 'https://github.com/gusrsilva';">Github</li>
-        <li class="mdl-menu__item" onclick="location.href = 'mailto:gus7silva@yahoo.com';">E-mail</li>
-        <li class="mdl-menu__item" onclick="location.href = 'https://www.dropbox.com/s/q9qnay7109fob8p/Gustavo%20Silva%20Resume.pdf';">View Resume</li>
-    </ul>
+	<!-- Right aligned menu on top of button  -->
+	<ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" for="email-fab">
+		<li class="mdl-menu__item" onclick="location.href = 'https://www.linkedin.com/in/gusrsilva';">LinkedIn</li>
+		<li class="mdl-menu__item" onclick="location.href = 'https://plus.google.com/u/0/+GusSilvaBlockHead';">Google+</li>
+		<li class="mdl-menu__item" onclick="location.href = 'https://github.com/gusrsilva';">Github</li>
+		<li class="mdl-menu__item" onclick="location.href = 'mailto:gus7silva@yahoo.com';">E-mail</li>
+		<li class="mdl-menu__item" onclick="location.href = 'https://www.dropbox.com/s/q9qnay7109fob8p/Gustavo%20Silva%20Resume.pdf';">View Resume</li>
+	</ul>
 
 
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-	  <header class="mdl-layout__header mdl-layout__header--waterfall">
+		<header class="mdl-layout__header mdl-layout__header--waterfall">
 
-		<!-- Top row, always visible -->
-	    <div class="mdl-layout__header-row">
+			<!-- Top row, always visible -->
+			<div class="mdl-layout__header-row">
 
-		  <!-- Avatar Image -->
-		  <img style="padding-top:4px;" src="images/header_avi.png" height="48" width="48" />
+				<!-- Avatar Image -->
+				<img style="padding-top:4px;" src="images/header_avi.png" height="48" width="48" />
 
-		  <!-- Title -->
-  		  <div class="header-title">GUS SILVA</div>
-  		  <!-- Add spacer, to align navigation to the right -->
-  		  <div class="mdl-layout-spacer"></div>
+				<!-- Title -->
+				<div class="header-title">GUS SILVA</div>
 
-		  <!-- Navigation. We hide it in small screens. -->
-  		  <nav class="mdl-navigation mdl-layout--large-screen-only">
-  			  <a class="mdl-navigation__link" href="#home">Home</a>
-  			  <a class="mdl-navigation__link" href="#projects">Projects</a>
-  			  <a class="mdl-navigation__link" href="#orgs">Organizations</a>
-  		  </nav>
+				<!-- Add spacer, to align navigation to the right -->
+				<div class="mdl-layout-spacer"></div>
 
-		  <!-- Make this small screen only once complete -->
-          <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-              <span class="mdl-layout-title">Gus Silva</span>
-              <nav class="mdl-navigation">
-                  <a class="mdl-navigation__link" href="#home">Home</a>
-                  <a class="mdl-navigation__link" href="#projects">Projects</a>
-                  <a class="mdl-navigation__link" href="#orgs">Organizations</a>
-              </nav>
-          </div>
-	    </div>
+				<!-- Navigation. We hide it in small screens. -->
+				<nav class="mdl-navigation mdl-layout--large-screen-only">
+					<a class="mdl-navigation__link" href="#home">Home</a>
+					<a class="mdl-navigation__link" href="#projects">Projects</a>
+					<a class="mdl-navigation__link" href="#orgs">Organizations</a>
+				</nav>
+			</div>
 
-		<!-- Bottom row, not visible on scroll -->
-	    <div class="wrap_header_row mdl-layout__header-row">
-			<div>
-			     <div class="header-subtitle">Senior Software Engineer, Wish</div>
-				 <div class="header-subtitle">Computer Science, UC Berkeley, 2017</div>
+			<!-- Bottom row, not visible on scroll -->
+			<div class="wrap_header_row mdl-layout__header-row">
+				<div>
+					<div class="header-subtitle">Senior Software Engineer, Wish</div>
+					<div class="header-subtitle">Computer Science, UC Berkeley, 2017</div>
 
-				 <!-- LinkedIn -->
-				 <a id="linkedin_icon" href="https://www.linkedin.com/in/gusrsilva">
+					<!-- LinkedIn -->
+					<a id="linkedin_icon" href="https://www.linkedin.com/in/gusrsilva">
 					 <svg viewBox="0 0 24 24">
 						 <path d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z"
 					 />
 					 </svg></a>
-				 <div class="mdl-tooltip" for="linkedin_icon"> LinkedIn </div>
-				 <!-- Google+ -->
-				 <a id="googleplus_icon" href="https://plus.google.com/u/0/+GusSilvaBlockHead">
+					<div class="mdl-tooltip" for="linkedin_icon"> LinkedIn </div>
+					<!-- Google+ -->
+					<a id="googleplus_icon" href="https://plus.google.com/u/0/+GusSilvaBlockHead">
 					 <svg viewBox="0 0 24 24">
 						 <path fill="#000000" d="M20,2A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H4A2,2 0 0,1 2,20V4C2,2.89 2.9,2 4,2H20M20,12H18V10H17V12H15V13H17V15H18V13H20V12M9,11.29V13H11.86C11.71,13.71 11,15.14 9,15.14C7.29,15.14 5.93,13.71 5.93,12C5.93,10.29 7.29,8.86 9,8.86C10,8.86 10.64,9.29 11,9.64L12.36,8.36C11.5,7.5 10.36,7 9,7C6.21,7 4,9.21 4,12C4,14.79 6.21,17 9,17C11.86,17 13.79,15 13.79,12.14C13.79,11.79 13.79,11.57 13.71,11.29H9Z"
 						 />
 					 </svg></a>
-				 <div class="mdl-tooltip" for="googleplus_icon"> Google+ </div>
-				 <!-- Github -->
-				 <a id="github_icon" href="https://github.com/gusrsilva">
+					<div class="mdl-tooltip" for="googleplus_icon"> Google+ </div>
+					<!-- Github -->
+					<a id="github_icon" href="https://github.com/gusrsilva">
 					 <svg viewBox="0 0 24 24">
 						 <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
 						 />
 					 </svg></a>
-				 <div class="mdl-tooltip" for="github_icon"> Github </div>
-				 <!-- Email -->
-				 <a id="email_icon" href="mailto:gus7silva@yahoo.com" target="_top">
+					<div class="mdl-tooltip" for="github_icon"> Github </div>
+					<!-- Email -->
+					<a id="email_icon" href="mailto:gus7silva@yahoo.com" target="_top">
 					 <svg viewBox="0 0 24 24">
 						 <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
 					 </svg></a>
-				 <div class="mdl-tooltip" for="email_icon"> E-mail </div>
-				 <!-- Resume -->
-				 <a id="resume_icon" href="https://www.dropbox.com/s/q9qnay7109fob8p/Gustavo%20Silva%20Resume.pdf?dl=0" target="_top">
+					<div class="mdl-tooltip" for="email_icon"> E-mail </div>
+					<!-- Resume -->
+					<a id="resume_icon" href="https://www.dropbox.com/s/q9qnay7109fob8p/Gustavo%20Silva%20Resume.pdf?dl=0" target="_top">
 					 <svg viewBox="0 0 24 24">
 						 <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z" />
 					 </svg></a>
-				 <div class="mdl-tooltip" for="resume_icon">Resume</div>
-	 		</div>
-	    </div>
-	  </header>
+					<div class="mdl-tooltip" for="resume_icon">Resume</div>
+				</div>
+			</div>
+		</header>
 
 
-        <main class="mdl-layout__content">
-            <div class="page-content">
-                <!-- Your content goes here -->
+		<main class="mdl-layout__content">
+			<div class="page-content">
 
-                <!-- HEADER -->
-                <a name="home"></a>
+				<a name="home"></a>
 
-                <a name="projects">
-                    <h3>Projects</h3>
+				<a name="projects">
+					<h3>Projects</h3>
 
-                    <div class="android-card-container mdl-grid">
+					<div class="android-card-container mdl-grid">
 
-                        <!-- BH Music Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/bhmusic.png">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">BH Music</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">
-                      A simple, light-weight, functional,
-                      and material-designed music player.
-                    </span>
-                            </div>
-                            <div class="mdl-card__actions">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/BHMusic">
-                       Learn More
-                       <!-- <i class="material-icons">chevron_right</i> -->
-                     </a>
-                            </div>
-                        </div>
-
-                        <!-- PicturePerfect Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/pictureperfect.png">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Picture Perfect</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">A smart camera application for Android developed at CalHacks 2015. This camera uses Google's Mobile Vision API to detect once everyone in the frame is smiling and snap the perfect photo.</span>
-                            </div>
-                            <div class="mdl-card__actions">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/PicturePerfect">
+						<!-- PicturePerfect Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/pictureperfect.png">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Picture Perfect</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">A smart camera application for Android developed at CalHacks 2015. This camera uses Google's Mobile Vision API to detect once everyone in the frame is smiling and snap the perfect photo.</span>
+							</div>
+							<div class="mdl-card__actions">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/PicturePerfect">
                        Learn More
                      </a>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
-                        <!-- DealOn! Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img id="dealon_learn_more" src="images/card_img/dealon.png">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">DealOn!</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">App desinged to help vendors instantly generate traffic during what would normally be slow hours.</span>
-                            </div>
-                            <div class="mdl-card__actions">
-                                <a disabled class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" style="color: grey">
+						<!-- DealOn! Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img id="dealon_learn_more" src="images/card_img/dealon.png">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">DealOn!</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">App desinged to help vendors instantly generate traffic during what would normally be slow hours.</span>
+							</div>
+							<div class="mdl-card__actions">
+								<a disabled class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" style="color: grey">
                        Learn More
                      </a>
-                                <div class="mdl-tooltip mdl-tooltip--large" for="dealon_learn_more">
-                                    This project is currently being worked on collaboratively and privately with others. Please contact me with any questions.
-                                </div>
-                            </div>
-                        </div>
+								<div class="mdl-tooltip mdl-tooltip--large" for="dealon_learn_more">
+									This project is currently being worked on collaboratively and privately with others. Please contact me with any questions.
+								</div>
+							</div>
+						</div>
 
-                        <!-- CALories Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/calories.png">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Cal-ories</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">A simple and light-weight fitness tracking app focused on the user that keeps track of the calories burned per workout and lets the user set goals and work towards them.</span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/CALories">
+						<!-- CALories Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/calories.png">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Cal-ories</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">A simple and light-weight fitness tracking app focused on the user that keeps track of the calories burned per workout and lets the user set goals and work towards them.</span>
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/CALories">
                        Learn More
                      </a>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
-                        <!-- Represent Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/represent.jpg">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Represent</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">An Android application with Android Wear support for people in the US to see information about the representatives in their area.</span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/Represent">
+						<!-- Represent Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/represent.jpg">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Represent</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">An Android application with Android Wear support for people in the US to see information about the representatives in their area.</span>
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/Represent">
                        Learn More
                      </a>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
 
-                        <!-- Face Morphing Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/face_morph.jpg">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Face Morphing</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">
+						<!-- Face Morphing Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/face_morph.jpg">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Face Morphing</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">
                                   Using compuatational image manipulation techniques to create face morphs
                                   and do other cool things such as finding the "mean face" of a population,
                                   caricaturizing an image, and "adjusting" feautures in an image.</span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="face_morphing/index.html">
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="face_morphing/index.html">
                        Learn More
                      </a>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
-                        <!-- Wirefly Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/wirefly.jpg">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Wirefly</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">
+						<!-- Wirefly Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/wirefly.jpg">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Wirefly</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">
                                   Optimal peer-to-peer network for international
                                   money transfers. Winner of Capitol One API
                                   Award at
                                   <a href="https://calhacks3.devpost.com/">CalHacks 3.0</a>,
                                    the largest collegiate hackathon in the world.
                                 </span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://devpost.com/software/wirefly">
-                       Learn More
-                     </a>
-                            </div>
-                        </div>
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://devpost.com/software/wirefly">Learn More</a>
+							</div>
+						</div>
 
-                        <!-- Picture Perfect iOS Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/pictureperfect_ios.png">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Picture Perfect iOS</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">
+						<!-- Picture Perfect iOS Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/pictureperfect_ios.png">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Picture Perfect iOS</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">
                                   The iOS counterpart to the Android Application.
                                   Picture Perfect is a smart camera application that takes the perfect picture
                                   every time! It does this by using Apple's
                                   CIDetector image processing class to determine when the person in the frame has both eyes open and
                                   is smiling.
                                 </span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/Picture-Perfect-iOS">
-                       Learn More
-                     </a>
-                            </div>
-                        </div>
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/Picture-Perfect-iOS">Learn More</a>
+							</div>
+						</div>
 
-                        .
+						<!-- BH Music Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/bhmusic.png">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">BH Music</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">
+			                      A simple, light-weight, functional,
+			                      and material-designed music player.
+                    			</span>
+							</div>
+							<div class="mdl-card__actions">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://github.com/gusrsilva/BHMusic">Learn More</a>
+							</div>
+						</div>
 
-                        <!-- Water Simulation Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/water.png">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Water Simulation</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">
+						<!-- Water Simulation Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/water.png">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Water Simulation</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">
                                   Implmentation of Macklin and Muller's <a href="http://mmacklin.com/pbf_sig_preprint.pdf"> Particle Based Fluids </a> , a
                                   method of simulating fluids such as water relatively accurately and efficiently.
                                 </span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="water_sim/final_report.html">
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="water_sim/final_report.html">
                        Learn More
                      </a>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
-                        <!-- Low Poly Art Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/low_poly.jpg">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">Low Poly Art</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">
+						<!-- Low Poly Art Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/low_poly.jpg">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">Low Poly Art</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">
                                   Using the same triangulation techniques used in the face morphing
                                   to create awesome looking low-poly art from images.
                                 </span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="face_morphing/low_poly_art.html">
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="face_morphing/low_poly_art.html">
                        Learn More
                      </a>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
 
-                        <!-- Gradient Blending Card -->
-                        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                            <div class="mdl-card__media">
-                                <img src="images/card_img/gradient_blending.jpg">
-                            </div>
-                            <div class="mdl-card__title">
-                                <h4 class="mdl-card__title-text">"Photoshopping" with Math</h4>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                <span class="mdl-typography--font-light mdl-typography--subhead">
+						<!-- Gradient Blending Card -->
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+							<div class="mdl-card__media">
+								<img src="images/card_img/gradient_blending.jpg">
+							</div>
+							<div class="mdl-card__title">
+								<h4 class="mdl-card__title-text">"Photoshopping" with Math</h4>
+							</div>
+							<div class="mdl-card__supporting-text">
+								<span class="mdl-typography--font-light mdl-typography--subhead">
                                   Using python and linear algebra in order to programatically super impose
                                   images and achieve a seamleass "photoshopped" image.
                                 </span>
-                            </div>
-                            <div class="mdl-card__actions ">
-                                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="gradient_blending/index.html">
+							</div>
+							<div class="mdl-card__actions ">
+								<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="gradient_blending/index.html">
                        Learn More
                      </a>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
-                    </div>
+					</div>
 
-                    <!-- END projects GRID -->
+					<!-- END projects GRID -->
 
-                    <a name="orgs">
-                        <h3> Organizations </h3>
-                        <div class="android-card-container mdl-grid">
+					<a name="orgs">
+						<h3> Organizations </h3>
+						<div class="android-card-container mdl-grid">
 
-                          <!-- Wish Card -->
-                          <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                              <div class="mdl-card__media">
-                                  <img src="images/card_img/wish.jpg">
-                              </div>
-                              <div class="mdl-card__title">
-                                  <h4 class="mdl-card__title-text">Wish</h4>
-                              </div>
-                              <div class="mdl-card__supporting-text">
-                                  <span class="mdl-typography--font-light mdl-typography--subhead">
+							<!-- Wish Card -->
+							<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+								<div class="mdl-card__media">
+									<img src="images/card_img/wish.jpg">
+								</div>
+								<div class="mdl-card__title">
+									<h4 class="mdl-card__title-text">Wish</h4>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<span class="mdl-typography--font-light mdl-typography--subhead">
                     Current Senior Software Engineer at Wish, where more than 150 million users experience shopping that is more smart, fun, and rewarding.
                   </span>
-                              </div>
-                              <div class="mdl-card__actions">
-                                  <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://www.wish.com/careers">
+								</div>
+								<div class="mdl-card__actions">
+									<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://www.wish.com/careers">
                      Learn More
                      <!-- <i class="material-icons">chevron_right</i> -->
                    </a>
-                              </div>
-                          </div>
+								</div>
+							</div>
 
-                            <!-- Prynt Card -->
-                            <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                                <div class="mdl-card__media">
-                                    <img src="images/card_img/prynt.jpg">
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h4 class="mdl-card__title-text">Prynt</h4>
-                                </div>
-                                <div class="mdl-card__supporting-text">
-                                    <span class="mdl-typography--font-light mdl-typography--subhead">
+							<!-- Prynt Card -->
+							<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+								<div class="mdl-card__media">
+									<img src="images/card_img/prynt.jpg">
+								</div>
+								<div class="mdl-card__title">
+									<h4 class="mdl-card__title-text">Prynt</h4>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<span class="mdl-typography--font-light mdl-typography--subhead">
                       Previous Android Developer at Prynt, the smartphone case that turns your phone into an instant printer, and brings the printed photos to life through augmented reality.
                     </span>
-                                </div>
-                                <div class="mdl-card__actions">
-                                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://www.prynt.co">
+								</div>
+								<div class="mdl-card__actions">
+									<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://www.prynt.co">
                        Learn More
                        <!-- <i class="material-icons">chevron_right</i> -->
                      </a>
-                                </div>
-                            </div>
+								</div>
+							</div>
 
-                            <!-- MDB Card -->
-                            <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                                <div class="mdl-card__media">
-                                    <img src="images/card_img/mdb.png">
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h4 class="mdl-card__title-text">Mobile Developers of Berkeley</h4>
-                                </div>
-                                <div class="mdl-card__supporting-text">
-                                    <span class="mdl-typography--font-light mdl-typography--subhead">
+							<!-- MDB Card -->
+							<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+								<div class="mdl-card__media">
+									<img src="images/card_img/mdb.png">
+								</div>
+								<div class="mdl-card__title">
+									<h4 class="mdl-card__title-text">Mobile Developers of Berkeley</h4>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<span class="mdl-typography--font-light mdl-typography--subhead">
                       Co-founded the first club focused on mobile development at Berkeley. Our
                       aim is to help members of all experience levels dream, design, and develop their iOS or Android
                       applications.
                     </span>
-                                </div>
-                                <div class="mdl-card__actions">
-                                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://www.mobiledevsberkeley.org">
+								</div>
+								<div class="mdl-card__actions">
+									<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://www.mobiledevsberkeley.org">
                        Learn More
                        <!-- <i class="material-icons">chevron_right</i> -->
                      </a>
-                                </div>
-                            </div>
+								</div>
+							</div>
 
-                            <!-- Math & Engineering Card -->
-                            <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                                <div class="mdl-card__media">
-                                    <img src="images/card_img/mec.png">
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h4 class="mdl-card__title-text">Mt. SAC Math &amp; Engineering Club</h4>
-                                </div>
-                                <div class="mdl-card__supporting-text">
-                                    <span class="mdl-typography--font-light mdl-typography--subhead">
+							<!-- Math & Engineering Card -->
+							<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+								<div class="mdl-card__media">
+									<img src="images/card_img/mec.png">
+								</div>
+								<div class="mdl-card__title">
+									<h4 class="mdl-card__title-text">Mt. SAC Math &amp; Engineering Club</h4>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<span class="mdl-typography--font-light mdl-typography--subhead">
                       General member and volunteer math tutor for a Mt. San Antonio
                       College club focused on providing help and resources to
                       better their experience and performance in math and
                       engineering courses.
                     </span>
-                                </div>
-                                <div class="mdl-card__actions">
-                                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://www.facebook.com/mathengineer">
+								</div>
+								<div class="mdl-card__actions">
+									<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://www.facebook.com/mathengineer">
                        Learn More
                        <!-- <i class="material-icons">chevron_right</i> -->
                      </a>
-                                </div>
-                            </div>
+								</div>
+							</div>
 
-                            <!-- Robotics Club Card -->
-                            <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                                <div class="mdl-card__media">
-                                    <img src="images/card_img/robotics.png">
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h4 class="mdl-card__title-text">Mt. SAC Robotics Club</h4>
-                                </div>
-                                <div class="mdl-card__supporting-text">
-                                    <span class="mdl-typography--font-light mdl-typography--subhead">
+							<!-- Robotics Club Card -->
+							<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+								<div class="mdl-card__media">
+									<img src="images/card_img/robotics.png">
+								</div>
+								<div class="mdl-card__title">
+									<h4 class="mdl-card__title-text">Mt. SAC Robotics Club</h4>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<span class="mdl-typography--font-light mdl-typography--subhead">
                       Programmer for robotics club, a sub-club of the Society of
                       Physics Students, that competed in worlwide competitions
                       such as VEX's. Focused on sensor reading such as
                       line-following and encoder-reading for the autonomous
                       portion of competitions.
                     </span>
-                                </div>
-                                <div class="mdl-card__actions">
-                                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://sites.google.com/site/mtsaccore/about-us">
+								</div>
+								<div class="mdl-card__actions">
+									<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://sites.google.com/site/mtsaccore/about-us">
                        Learn More
                        <!-- <i class="material-icons">chevron_right</i> -->
                      </a>
-                                </div>
-                            </div>
+								</div>
+							</div>
 
-                            <!-- Tutoring Club Card -->
-                            <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
-                                <div class="mdl-card__media">
-                                    <img src="images/card_img/tutor.png">
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h4 class="mdl-card__title-text">Mt. SAC Tutorial Services</h4>
-                                </div>
-                                <div class="mdl-card__supporting-text">
-                                    <span class="mdl-typography--font-light mdl-typography--subhead">
+							<!-- Tutoring Club Card -->
+							<div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--6dp">
+								<div class="mdl-card__media">
+									<img src="images/card_img/tutor.png">
+								</div>
+								<div class="mdl-card__title">
+									<h4 class="mdl-card__title-text">Mt. SAC Tutorial Services</h4>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<span class="mdl-typography--font-light mdl-typography--subhead">
                       Paid tutor of Mathematics for the Tutorial Services of Mt.
                       San Antonio College. Worked with students to develop the skills
                       and habits necessary to become independent learners and successful
                       in calculus, linear algebra, and differential equations courses.
                     </span>
-                                </div>
-                                <div class="mdl-card__actions">
-                                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://www.mtsac.edu/math/">
+								</div>
+								<div class="mdl-card__actions">
+									<a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://www.mtsac.edu/math/">
                        Learn More
                        <!-- <i class="material-icons">chevron_right</i> -->
                      </a>
-                                </div>
-                            </div>
+								</div>
+							</div>
 
-                        </div>
-                        <!-- END organizations grid-->
+						</div>
+						<!-- END organizations grid-->
 
-                        <footer class="mdl-mini-footer">
-                            <div class="mdl-mini-footer__left-section">
-                                Designed by Gus Silva
-                                <br> Updated June 2017
-                            </div>
-                        </footer>
+						<footer class="mdl-mini-footer">
+							<div class="mdl-mini-footer__left-section">
+								Designed by Gus Silva
+								<br> Updated June 2017
+							</div>
+						</footer>
 
-            </div>
-            <!-- END PAGE CONTENT -->
+			</div>
+			<!-- END PAGE CONTENT -->
 
 
-    </div>
-    </main>
+	</div>
+	</main>
 </body>
 
 </html>
