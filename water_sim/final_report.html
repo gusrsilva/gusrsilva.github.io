@@ -24,7 +24,7 @@
 </script>
 
 
-<title>CS 184 Final Project</title>
+<title>Fluid Simulation</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
 </head>
@@ -32,17 +32,16 @@
 
 <body>
 
-<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2017</h1>
 <h1 align="middle">Fluid Simulation</h1>
-<h2 align="middle">Christine Zheng, CS184-aad, Gus Silva, CS184-aeq</h2>
+<h2 align="middle">Christine Zheng, Gus Silva</h2>
 
 <div align="center">
-  <a href="https://youtu.be/vLC-lHFh1oE">Final Presentation Video</a>
+  <a href="https://youtu.be/vLC-lHFh1oE">Demo Video</a>
 </div>
 
 <h2 align="middle">Abstract</h2>
 <p>
-  In this project we put the skills we have learned in CS184 to use. We first develop a simple
+  In this project we explore a tricky subject: simulating the movements of fluids. We first develop a simple
   particle renderer with controls. We then attempt to use a particle-based approach to simulate water.
   The key to simulating any fluid is enforcing incompressibility. Unfortunately, this is
   computationally expensive. In the paper
@@ -318,11 +317,6 @@ $$ N = \frac{\nabla_{|w|_i}}{|\nabla_{|w|_i}|} $$
 
 <h4>Problems Encountered and Lessons Learned</h4>
 <ul>
-  <li>
-    Don't underestimate the basics. We originally allocated virtually no time in
-    our schedule plan for developing the basic renderer. However, this proved to
-    take much more time than we expected to get everything working.
-  </li>
   <li>
     Timing is everything. In an effort to lock our simulation in with real time,
   we originally calculated $\Delta t$ each iteration using the true difference
